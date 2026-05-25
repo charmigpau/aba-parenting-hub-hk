@@ -2,9 +2,9 @@ import { useLang } from "@/i18n/LanguageProvider";
 import { Link } from "@tanstack/react-router";
 
 const socials = [
-  { name: "Instagram", href: "https://instagram.com/cheryl.bcba" },
-  { name: "Facebook", href: "https://facebook.com/cheryl.bcba" },
-  { name: "Threads", href: "https://www.threads.net/@cheryl.bcba" },
+  { name: "Instagram", href: "https://instagram.com/charming.bcba" },
+  { name: "Facebook", href: "https://facebook.com/charming.bcba" },
+  { name: "Threads", href: "https://www.threads.net/@charming.bcba" },
 ];
 
 export function Footer() {
@@ -37,8 +37,8 @@ export function Footer() {
           <p className="eyebrow mb-4">{t.footer.contact}</p>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="mailto:hello@cheryl-bcba.hk" className="hover:accent-underline">
-                hello@cheryl-bcba.hk
+              <a href="mailto:charmingpau@sdfkhk.com" className="hover:accent-underline">
+                charmingpau@sdfkhk.com
               </a>
             </li>
             <li>

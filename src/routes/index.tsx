@@ -6,13 +6,13 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Cheryl Lam, BCBA — Trilingual ABA in Hong Kong" },
+      { title: "Charming Pau, BCBA — Trilingual ABA in Hong Kong" },
       {
         name: "description",
         content:
           "Trilingual Board Certified Behavior Analyst in Hong Kong. ABA therapy, parent coaching, and weekly tips in English, Cantonese and Mandarin.",
       },
-      { property: "og:title", content: "Cheryl Lam, BCBA — Trilingual ABA in Hong Kong" },
+      { property: "og:title", content: "Charming Pau, BCBA — Trilingual ABA in Hong Kong" },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],

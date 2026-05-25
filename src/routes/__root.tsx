@@ -73,20 +73,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Cheryl Lam, BCBA — Trilingual ABA Therapy & Parent Coaching in Hong Kong" },
+      { title: "Charming Pau, BCBA — Trilingual ABA Therapy & Parent Coaching in Hong Kong" },
       {
         name: "description",
         content:
           "Trilingual (English, Cantonese, Mandarin) Board Certified Behavior Analyst in Hong Kong. ABA therapy, parent consultation, and evidence-based parenting tips.",
       },
-      { property: "og:title", content: "Cheryl Lam, BCBA — Trilingual ABA in Hong Kong" },
+      { property: "og:title", content: "Charming Pau, BCBA — Trilingual ABA in Hong Kong" },
       {
         property: "og:description",
         content:
           "ABA therapy and parent coaching in English, Cantonese and Mandarin. Book a consultation or read weekly tips.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Cheryl Lam, BCBA" },
+      { property: "og:site_name", content: "Charming Pau, BCBA" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -104,11 +104,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          name: "Cheryl Lam, BCBA",
+          name: "Charming Pau, BCBA",
           description:
             "Trilingual Board Certified Behavior Analyst offering ABA therapy and parent consultation in Hong Kong.",
           areaServed: "Hong Kong",
-          email: "hello@cheryl-bcba.hk",
+          email: "charmingpau@sdfkhk.com",
           knowsLanguage: ["en", "zh-Hant", "zh-Hans"],
         }),
       },

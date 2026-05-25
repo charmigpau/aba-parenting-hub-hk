@@ -8,13 +8,13 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
   head: () => ({
     meta: [
-      { title: "Contact — Request an appointment with Cheryl Lam, BCBA" },
+      { title: "Contact — Request an appointment with Charming Pau, BCBA" },
       {
         name: "description",
         content:
           "Request a parent consultation or ABA therapy session in Hong Kong. Replies within two business days.",
       },
-      { property: "og:title", content: "Contact — Cheryl Lam, BCBA" },
+      { property: "og:title", content: "Contact — Charming Pau, BCBA" },
       { property: "og:description", content: "Request an appointment. Trilingual BCBA in Hong Kong." },
       { property: "og:url", content: "/contact" },
     ],

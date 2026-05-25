@@ -6,14 +6,14 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
   head: () => ({
     meta: [
-      { title: "About — Cheryl Lam, BCBA" },
+      { title: "About — Charming Pau, BCBA" },
       {
         name: "description",
         content:
           "Hong Kong-based Board Certified Behavior Analyst working trilingually with families in English, Cantonese and Mandarin.",
       },
-      { property: "og:title", content: "About — Cheryl Lam, BCBA" },
-      { property: "og:description", content: "Meet Cheryl, a trilingual BCBA based in Hong Kong." },
+      { property: "og:title", content: "About — Charming Pau, BCBA" },
+      { property: "og:description", content: "Meet Charming, a trilingual BCBA based in Hong Kong." },
       { property: "og:url", content: "/about" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
