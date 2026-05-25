@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell, Eyebrow } from "@/components/site/PageShell";
 import { useLang } from "@/i18n/LanguageProvider";
+import portrait from "@/assets/charming-portrait.jpg";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
