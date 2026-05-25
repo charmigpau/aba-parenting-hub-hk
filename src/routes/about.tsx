@@ -1,19 +1,20 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell, Eyebrow } from "@/components/site/PageShell";
 import { useLang } from "@/i18n/LanguageProvider";
+import portrait from "@/assets/charming-portrait.jpg";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
   head: () => ({
     meta: [
-      { title: "About — Cheryl Lam, BCBA" },
+      { title: "About — Charming Pau, BCBA" },
       {
         name: "description",
         content:
           "Hong Kong-based Board Certified Behavior Analyst working trilingually with families in English, Cantonese and Mandarin.",
       },
-      { property: "og:title", content: "About — Cheryl Lam, BCBA" },
-      { property: "og:description", content: "Meet Cheryl, a trilingual BCBA based in Hong Kong." },
+      { property: "og:title", content: "About — Charming Pau, BCBA" },
+      { property: "og:description", content: "Meet Charming, a trilingual BCBA based in Hong Kong." },
       { property: "og:url", content: "/about" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
@@ -37,7 +38,14 @@ function AboutPage() {
       <section className="border-b border-hairline">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 py-20 md:grid-cols-12">
           <div className="md:col-span-5">
-            <div className="aspect-[4/5] w-full bg-surface" aria-hidden />
+            <img
+              src={portrait}
+              alt="Portrait of Charming Pau, BCBA"
+              width={896}
+              height={1120}
+              loading="lazy"
+              className="aspect-[4/5] w-full object-cover bg-surface grayscale-[0.05]"
+            />
             <p className="eyebrow mt-4">{t.brand.tag}</p>
           </div>
           <div className="md:col-span-6 md:col-start-7">

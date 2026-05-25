@@ -6,13 +6,13 @@ export const Route = createFileRoute("/tips")({
   component: TipsPage,
   head: () => ({
     meta: [
-      { title: "ABA Parenting Tips — Cheryl Lam, BCBA" },
+      { title: "ABA Parenting Tips — Charming Pau, BCBA" },
       {
         name: "description",
         content:
           "Short, practical ABA parenting tips from a Hong Kong BCBA — distilled from real sessions.",
       },
-      { property: "og:title", content: "ABA Parenting Tips — Cheryl Lam, BCBA" },
+      { property: "og:title", content: "ABA Parenting Tips — Charming Pau, BCBA" },
       { property: "og:description", content: "Practical ABA tips for Hong Kong families." },
       { property: "og:url", content: "/tips" },
     ],
@@ -24,17 +24,17 @@ const socials = [
   {
     name: "Instagram",
     handleKey: "ig" as const,
-    href: "https://instagram.com/cheryl.bcba",
+    href: "https://instagram.com/charming.bcba",
   },
   {
     name: "Facebook",
     handleKey: "fb" as const,
-    href: "https://facebook.com/cheryl.bcba",
+    href: "https://facebook.com/charming.bcba",
   },
   {
     name: "Threads",
     handleKey: "threads" as const,
-    href: "https://www.threads.net/@cheryl.bcba",
+    href: "https://www.threads.net/@charming.bcba",
   },
 ];
 

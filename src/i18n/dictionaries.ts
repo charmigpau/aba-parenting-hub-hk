@@ -93,7 +93,7 @@ export type Dict = {
 };
 
 const en: Dict = {
-  brand: { name: "Cheryl Lam, BCBA", tag: "Trilingual BCBA · Hong Kong" },
+  brand: { name: "Charming Pau, BCBA", tag: "Trilingual BCBA · Hong Kong" },
   nav: { home: "Home", about: "About", services: "Services", tips: "Tips", contact: "Contact" },
   cta: { book: "Book a consultation", learnMore: "Learn more", readTips: "Read tips", followAlong: "Follow along" },
   home: {
@@ -112,7 +112,7 @@ const en: Dict = {
   },
   about: {
     eyebrow: "About",
-    title: "Hello, I’m Cheryl.",
+    title: "Hello, I’m Charming.",
     lead:
       "A Board Certified Behavior Analyst based in Hong Kong, working trilingually with families navigating autism, developmental differences and everyday parenting challenges.",
     bio: [
@@ -197,14 +197,14 @@ const en: Dict = {
     socialTitle: "More tips, weekly.",
     socialBody:
       "I share short ABA parenting tips, behind-the-scenes from sessions and answers to common questions across Instagram, Facebook and Threads.",
-    handles: { ig: "@cheryl.bcba", fb: "Cheryl Lam, BCBA", threads: "@cheryl.bcba" },
+    handles: { ig: "@charming.bcba", fb: "Charming Pau, BCBA", threads: "@charming.bcba" },
   },
   contact: {
     eyebrow: "Contact",
     title: "Request an appointment.",
     lead:
       "Tell me a little about your family and what you’re looking for. I’ll reply personally within two business days to arrange a time.",
-    responseNote: "Responses within 2 business days · hello@cheryl-bcba.hk",
+    responseNote: "Responses within 2 business days · charmingpau@sdfkhk.com",
     form: {
       name: "Your name",
       email: "Email",
@@ -242,7 +242,7 @@ const en: Dict = {
 };
 
 const zhHant: Dict = {
-  brand: { name: "林芷晴 BCBA", tag: "三語 BCBA · 香港" },
+  brand: { name: "包芷晴 BCBA", tag: "三語 BCBA · 香港" },
   nav: { home: "首頁", about: "關於", services: "服務", tips: "育兒貼士", contact: "聯絡" },
   cta: { book: "預約諮詢", learnMore: "了解更多", readTips: "閱讀貼士", followAlong: "追蹤我們" },
   home: {
@@ -261,7 +261,7 @@ const zhHant: Dict = {
   },
   about: {
     eyebrow: "關於",
-    title: "你好，我是芷晴。",
+    title: "你好，我是 Charming。",
     lead:
       "我是駐香港的國際認證行為分析師（BCBA），以三語陪伴家庭，面對自閉症、發展差異與日常育兒挑戰。",
     bio: [
@@ -346,13 +346,13 @@ const zhHant: Dict = {
     socialTitle: "更多貼士，每週更新。",
     socialBody:
       "我會在 Instagram、Facebook 及 Threads 分享 ABA 育兒短貼士、治療幕後與常見問題解答。",
-    handles: { ig: "@cheryl.bcba", fb: "Cheryl Lam, BCBA", threads: "@cheryl.bcba" },
+    handles: { ig: "@charming.bcba", fb: "Charming Pau, BCBA", threads: "@charming.bcba" },
   },
   contact: {
     eyebrow: "聯絡",
     title: "預約一次見面。",
     lead: "請告訴我一點關於你家庭的情況，以及你正在尋找什麼。我會於兩個工作天內親自回覆。",
-    responseNote: "兩個工作天內回覆 · hello@cheryl-bcba.hk",
+    responseNote: "兩個工作天內回覆 · charmingpau@sdfkhk.com",
     form: {
       name: "姓名",
       email: "電郵",
@@ -385,7 +385,7 @@ const zhHant: Dict = {
 };
 
 const zhHans: Dict = {
-  brand: { name: "林芷晴 BCBA", tag: "三语 BCBA · 香港" },
+  brand: { name: "包芷晴 BCBA", tag: "三语 BCBA · 香港" },
   nav: { home: "首页", about: "关于", services: "服务", tips: "育儿贴士", contact: "联系" },
   cta: { book: "预约咨询", learnMore: "了解更多", readTips: "阅读贴士", followAlong: "关注我们" },
   home: {
@@ -404,7 +404,7 @@ const zhHans: Dict = {
   },
   about: {
     eyebrow: "关于",
-    title: "你好，我是芷晴。",
+    title: "你好，我是 Charming。",
     lead:
       "我是驻香港的国际认证行为分析师（BCBA），以三语陪伴家庭，面对自闭症、发展差异与日常育儿挑战。",
     bio: [
@@ -488,13 +488,13 @@ const zhHans: Dict = {
     socialEyebrow: "03 — 关注我们",
     socialTitle: "更多贴士，每周更新。",
     socialBody: "我会在 Instagram、Facebook 及 Threads 分享 ABA 育儿短贴士、治疗幕后与常见问题解答。",
-    handles: { ig: "@cheryl.bcba", fb: "Cheryl Lam, BCBA", threads: "@cheryl.bcba" },
+    handles: { ig: "@charming.bcba", fb: "Charming Pau, BCBA", threads: "@charming.bcba" },
   },
   contact: {
     eyebrow: "联系",
     title: "预约一次见面。",
     lead: "请告诉我一点关于你家庭的情况，以及你正在寻找什么。我会于两个工作天内亲自回覆。",
-    responseNote: "两个工作天内回覆 · hello@cheryl-bcba.hk",
+    responseNote: "两个工作天内回覆 · charmingpau@sdfkhk.com",
     form: {
       name: "姓名",
       email: "电邮",

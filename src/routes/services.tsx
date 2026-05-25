@@ -6,13 +6,13 @@ export const Route = createFileRoute("/services")({
   component: ServicesPage,
   head: () => ({
     meta: [
-      { title: "Services — Cheryl Lam, BCBA" },
+      { title: "Services — Charming Pau, BCBA" },
       {
         name: "description",
         content:
           "Parent consultation and ABA therapy sessions in Hong Kong, available in English, Cantonese and Mandarin.",
       },
-      { property: "og:title", content: "Services — Cheryl Lam, BCBA" },
+      { property: "og:title", content: "Services — Charming Pau, BCBA" },
       { property: "og:description", content: "Parent consultation and ongoing ABA therapy in Hong Kong." },
       { property: "og:url", content: "/services" },
     ],
