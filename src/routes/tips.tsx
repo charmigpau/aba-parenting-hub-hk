@@ -99,6 +99,19 @@ function TipsPage() {
                 </li>
               ))}
             </ul>
+
+            {instagramPosts.length > 0 && (
+              <div className="mt-12">
+                <p className="eyebrow mb-4">Latest on Instagram</p>
+                <InstagramEmbeds urls={instagramPosts} />
+              </div>
+            )}
+            {threadsPosts.length > 0 && (
+              <div className="mt-12">
+                <p className="eyebrow mb-4">Latest on Threads</p>
+                <ThreadsEmbeds urls={threadsPosts} />
+              </div>
+            )}
           </div>
         </div>
       </section>
