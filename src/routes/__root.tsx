@@ -112,6 +112,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           knowsLanguage: ["en", "zh-Hant", "zh-Hans"],
         }),
       },
+      { src: "https://www.instagram.com/embed.js", async: true, defer: true },
+      { src: "https://www.threads.com/embed.js", async: true, defer: true },
     ],
   }),
   shellComponent: RootShell,

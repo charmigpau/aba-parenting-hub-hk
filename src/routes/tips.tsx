@@ -1,6 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, Eyebrow } from "@/components/site/PageShell";
 import { useLang } from "@/i18n/LanguageProvider";
+import {
+  InstagramEmbeds,
+  ThreadsEmbeds,
+  instagramPosts,
+  threadsPosts,
+} from "@/components/site/SocialEmbeds";
 
 export const Route = createFileRoute("/tips")({
   component: TipsPage,
@@ -24,17 +30,17 @@ const socials = [
   {
     name: "Instagram",
     handleKey: "ig" as const,
-    href: "https://instagram.com/charming.bcba",
+    href: "https://www.instagram.com/charmingbcba/",
   },
   {
     name: "Facebook",
     handleKey: "fb" as const,
-    href: "https://facebook.com/charming.bcba",
+    href: "https://www.facebook.com/charmingbcba",
   },
   {
     name: "Threads",
     handleKey: "threads" as const,
-    href: "https://www.threads.net/@charming.bcba",
+    href: "https://www.threads.com/@charmingbcba",
   },
 ];
 
@@ -93,6 +99,19 @@ function TipsPage() {
                 </li>
               ))}
             </ul>
+
+            {instagramPosts.length > 0 && (
+              <div className="mt-12">
+                <p className="eyebrow mb-4">Latest on Instagram</p>
+                <InstagramEmbeds urls={instagramPosts} />
+              </div>
+            )}
+            {threadsPosts.length > 0 && (
+              <div className="mt-12">
+                <p className="eyebrow mb-4">Latest on Threads</p>
+                <ThreadsEmbeds urls={threadsPosts} />
+              </div>
+            )}
           </div>
         </div>
       </section>
