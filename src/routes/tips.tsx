@@ -24,17 +24,17 @@ const socials = [
   {
     name: "Instagram",
     handleKey: "ig" as const,
-    href: "https://instagram.com/charming.bcba",
+    href: "https://www.instagram.com/charmingbcba/",
   },
   {
     name: "Facebook",
     handleKey: "fb" as const,
-    href: "https://facebook.com/charming.bcba",
+    href: "https://www.facebook.com/charmingbcba",
   },
   {
     name: "Threads",
     handleKey: "threads" as const,
-    href: "https://www.threads.net/@charming.bcba",
+    href: "https://www.threads.com/@charmingbcba",
   },
 ];
 

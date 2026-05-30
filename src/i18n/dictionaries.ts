@@ -197,7 +197,7 @@ const en: Dict = {
     socialTitle: "More tips, weekly.",
     socialBody:
       "I share short ABA parenting tips, behind-the-scenes from sessions and answers to common questions across Instagram, Facebook and Threads.",
-    handles: { ig: "@charming.bcba", fb: "Charming Pau, BCBA", threads: "@charming.bcba" },
+    handles: { ig: "@charmingbcba", fb: "Charming Pau, BCBA", threads: "@charmingbcba" },
   },
   contact: {
     eyebrow: "Contact",
@@ -346,7 +346,7 @@ const zhHant: Dict = {
     socialTitle: "更多貼士，每週更新。",
     socialBody:
       "我會在 Instagram、Facebook 及 Threads 分享 ABA 育兒短貼士、治療幕後與常見問題解答。",
-    handles: { ig: "@charming.bcba", fb: "Charming Pau, BCBA", threads: "@charming.bcba" },
+    handles: { ig: "@charmingbcba", fb: "Charming Pau, BCBA", threads: "@charmingbcba" },
   },
   contact: {
     eyebrow: "聯絡",
@@ -488,7 +488,7 @@ const zhHans: Dict = {
     socialEyebrow: "03 — 关注我们",
     socialTitle: "更多贴士，每周更新。",
     socialBody: "我会在 Instagram、Facebook 及 Threads 分享 ABA 育儿短贴士、治疗幕后与常见问题解答。",
-    handles: { ig: "@charming.bcba", fb: "Charming Pau, BCBA", threads: "@charming.bcba" },
+    handles: { ig: "@charmingbcba", fb: "Charming Pau, BCBA", threads: "@charmingbcba" },
   },
   contact: {
     eyebrow: "联系",

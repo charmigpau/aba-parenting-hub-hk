@@ -2,9 +2,9 @@ import { useLang } from "@/i18n/LanguageProvider";
 import { Link } from "@tanstack/react-router";
 
 const socials = [
-  { name: "Instagram", href: "https://instagram.com/charming.bcba" },
-  { name: "Facebook", href: "https://facebook.com/charming.bcba" },
-  { name: "Threads", href: "https://www.threads.net/@charming.bcba" },
+  { name: "Instagram", href: "https://www.instagram.com/charmingbcba/" },
+  { name: "Facebook", href: "https://www.facebook.com/charmingbcba" },
+  { name: "Threads", href: "https://www.threads.com/@charmingbcba" },
 ];
 
 export function Footer() {
