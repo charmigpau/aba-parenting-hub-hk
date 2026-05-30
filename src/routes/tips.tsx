@@ -1,6 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, Eyebrow } from "@/components/site/PageShell";
 import { useLang } from "@/i18n/LanguageProvider";
+import {
+  InstagramEmbeds,
+  ThreadsEmbeds,
+  instagramPosts,
+  threadsPosts,
+} from "@/components/site/SocialEmbeds";
 
 export const Route = createFileRoute("/tips")({
   component: TipsPage,
