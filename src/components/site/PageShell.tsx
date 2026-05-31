@@ -16,8 +16,8 @@ export function Eyebrow({ children }: { children: ReactNode }) {
   return <p className="eyebrow">{children}</p>;
 }
 
-export function SectionTitle({ children }: { children: ReactNode }) {
+export function SectionTitle({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <h2 className="font-display text-4xl leading-[1.05] sm:text-5xl md:text-6xl">{children}</h2>
+    <h2 className={"font-display text-4xl leading-[1.05] sm:text-5xl md:text-6xl " + (className || "")}>{children}</h2>
   );
 }

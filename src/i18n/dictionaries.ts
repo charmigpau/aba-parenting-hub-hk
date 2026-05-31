@@ -96,7 +96,7 @@ export type Dict = {
 
 const en: Dict = {
   brand: { name: "Charming Pau, BCBA", tag: "Trilingual BCBA · Hong Kong" },
-  nav: { home: "Home", about: "About", services: "Services", tips: "Tips", contact: "Contact" },
+  nav: { home: "Home", about: "About", services: "Services", tips: "Tips", contact: "Contact", resources: "Resources", clinic: "Clinic" },
   cta: { book: "Book a consultation", learnMore: "Learn more", readTips: "Read tips", followAlong: "Follow along" },
   home: {
     eyebrow: "Board Certified Behavior Analyst",
@@ -111,6 +111,8 @@ const en: Dict = {
     servicesTitle: "Two ways to work together.",
     servicesBody:
       "Single-session parent consultations for focused guidance, or ongoing ABA therapy for sustained progress. Both available in-person in HK and online.",
+    heroCtaBrand: "Explore Resources & Community",
+    heroCtaClinical: "Clinical Services & Therapy",
   },
   about: {
     eyebrow: "About",
@@ -245,7 +247,7 @@ const en: Dict = {
 
 const zhHant: Dict = {
   brand: { name: "包芷晴 BCBA", tag: "三語 BCBA · 香港" },
-  nav: { home: "首頁", about: "關於", services: "服務", tips: "育兒貼士", contact: "聯絡" },
+  nav: { home: "首頁", about: "關於", services: "服務", tips: "育兒貼士", contact: "聯絡", resources: "資源", clinic: "診所" },
   cta: { book: "預約諮詢", learnMore: "了解更多", readTips: "閱讀貼士", followAlong: "追蹤我們" },
   home: {
     eyebrow: "國際認證行為分析師",
@@ -260,6 +262,8 @@ const zhHant: Dict = {
     servicesTitle: "兩種合作方式。",
     servicesBody:
       "單次家長諮詢提供聚焦指導；持續 ABA 治療則帶來長期進展。兩者均可於香港面授或線上進行。",
+    heroCtaBrand: "探索資源與社群",
+    heroCtaClinical: "臨床服務與治療",
   },
   about: {
     eyebrow: "關於",
@@ -388,7 +392,7 @@ const zhHant: Dict = {
 
 const zhHans: Dict = {
   brand: { name: "包芷晴 BCBA", tag: "三语 BCBA · 香港" },
-  nav: { home: "首页", about: "关于", services: "服务", tips: "育儿贴士", contact: "联系" },
+  nav: { home: "首页", about: "关于", services: "服务", tips: "育儿贴士", contact: "联系", resources: "资源", clinic: "诊所" },
   cta: { book: "预约咨询", learnMore: "了解更多", readTips: "阅读贴士", followAlong: "关注我们" },
   home: {
     eyebrow: "国际认证行为分析师",
@@ -403,6 +407,8 @@ const zhHans: Dict = {
     servicesTitle: "两种合作方式。",
     servicesBody:
       "单次家长咨询提供聚焦指导；持续 ABA 治疗则带来长期进展。两者均可于香港面授或线上进行。",
+    heroCtaBrand: "探索资源与社群",
+    heroCtaClinical: "临床服务与治疗",
   },
   about: {
     eyebrow: "关于",
