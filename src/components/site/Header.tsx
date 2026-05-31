@@ -18,6 +18,7 @@ export function Header() {
     { to: "/resources", label: t.nav.resources },
     { to: "/clinic", label: t.nav.clinic },
     { to: "/tips", label: t.nav.tips },
+    { to: "/booking", label: "Booking" },
     { to: "/contact", label: t.nav.contact },
   ] as const;
 

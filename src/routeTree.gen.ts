@@ -14,8 +14,10 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ClinicRouteImport } from './routes/clinic'
+import { Route as BookingRouteImport } from './routes/booking'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiPublicBookingRequestRouteImport } from './routes/api/public/booking-request'
 
 const TipsRoute = TipsRouteImport.update({
   id: '/tips',
@@ -42,6 +44,11 @@ const ClinicRoute = ClinicRouteImport.update({
   path: '/clinic',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BookingRoute = BookingRouteImport.update({
+  id: '/booking',
+  path: '/booking',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -52,73 +59,92 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicBookingRequestRoute = ApiPublicBookingRequestRouteImport.update({
+  id: '/api/public/booking-request',
+  path: '/api/public/booking-request',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/booking': typeof BookingRoute
   '/clinic': typeof ClinicRoute
   '/contact': typeof ContactRoute
   '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
   '/tips': typeof TipsRoute
+  '/api/public/booking-request': typeof ApiPublicBookingRequestRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/booking': typeof BookingRoute
   '/clinic': typeof ClinicRoute
   '/contact': typeof ContactRoute
   '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
   '/tips': typeof TipsRoute
+  '/api/public/booking-request': typeof ApiPublicBookingRequestRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/booking': typeof BookingRoute
   '/clinic': typeof ClinicRoute
   '/contact': typeof ContactRoute
   '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
   '/tips': typeof TipsRoute
+  '/api/public/booking-request': typeof ApiPublicBookingRequestRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/booking'
     | '/clinic'
     | '/contact'
     | '/resources'
     | '/services'
     | '/tips'
+    | '/api/public/booking-request'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/booking'
     | '/clinic'
     | '/contact'
     | '/resources'
     | '/services'
     | '/tips'
+    | '/api/public/booking-request'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/booking'
     | '/clinic'
     | '/contact'
     | '/resources'
     | '/services'
     | '/tips'
+    | '/api/public/booking-request'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BookingRoute: typeof BookingRoute
   ClinicRoute: typeof ClinicRoute
   ContactRoute: typeof ContactRoute
   ResourcesRoute: typeof ResourcesRoute
   ServicesRoute: typeof ServicesRoute
   TipsRoute: typeof TipsRoute
+  ApiPublicBookingRequestRoute: typeof ApiPublicBookingRequestRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -158,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClinicRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/booking': {
+      id: '/booking'
+      path: '/booking'
+      fullPath: '/booking'
+      preLoaderRoute: typeof BookingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -172,17 +205,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/booking-request': {
+      id: '/api/public/booking-request'
+      path: '/api/public/booking-request'
+      fullPath: '/api/public/booking-request'
+      preLoaderRoute: typeof ApiPublicBookingRequestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BookingRoute: BookingRoute,
   ClinicRoute: ClinicRoute,
   ContactRoute: ContactRoute,
   ResourcesRoute: ResourcesRoute,
   ServicesRoute: ServicesRoute,
   TipsRoute: TipsRoute,
+  ApiPublicBookingRequestRoute: ApiPublicBookingRequestRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
