@@ -1,9 +1,8 @@
-export type Lang = "en" | "zh-HK" | "zh-TW";
+export type Lang = "en" | "zh-TW";
 
 export const LANGS: { code: Lang; label: string; htmlLang: string }[] = [
   { code: "en", label: "EN", htmlLang: "en" },
-  { code: "zh-HK", label: "粵", htmlLang: "zh-HK" },
-  { code: "zh-TW", label: "繁", htmlLang: "zh-Hant-TW" },
+  { code: "zh-TW", label: "繁", htmlLang: "zh-Hant" },
 ];
 
 export type Dict = {
