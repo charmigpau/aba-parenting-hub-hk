@@ -3,10 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { PageShell, Eyebrow, SectionTitle } from "@/components/site/PageShell";
+import { PageShell, Eyebrow } from "@/components/site/PageShell";
 
 // Paste your Google Calendar Appointment Scheduling embed URL here.
-// Get it from Google Calendar → Appointment schedule → Share → Embed.
 const GOOGLE_CALENDAR_EMBED_URL =
   "https://calendar.google.com/calendar/appointments/schedules/REPLACE_WITH_YOUR_SCHEDULE_ID?gv=true";
 
@@ -28,16 +27,8 @@ export const Route = createFileRoute("/booking")({
 });
 
 const FormSchema = z.object({
-  parentName: z
-    .string()
-    .trim()
-    .min(1, "Please enter your name")
-    .max(100, "Name is too long"),
-  email: z
-    .string()
-    .trim()
-    .email("Please enter a valid email")
-    .max(255),
+  parentName: z.string().trim().min(1, "Please enter your name").max(100, "Name is too long"),
+  email: z.string().trim().email("Please enter a valid email").max(255),
   phone: z
     .string()
     .trim()
@@ -72,9 +63,7 @@ const FormSchema = z.object({
     .max(1000, "Please keep notes under 1000 characters")
     .optional()
     .or(z.literal("")),
-  consent: z.literal(true, {
-    message: "Please confirm you agree to be contacted",
-  }),
+  consent: z.literal(true, { message: "Please confirm you agree to be contacted" }),
 });
 
 type FormValues = z.infer<typeof FormSchema>;
@@ -90,9 +79,7 @@ const AREAS: { value: FormValues["areaOfConcern"]; label: string }[] = [
 ];
 
 function BookingPage() {
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
-    "idle",
-  );
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   const {
@@ -118,7 +105,6 @@ function BookingPage() {
     setStatus("submitting");
     setErrorMsg(null);
     try {
-      // POST body — PII is never placed in query parameters.
       const res = await fetch("/api/public/booking-request", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -139,25 +125,28 @@ function BookingPage() {
   return (
     <PageShell>
       <section className="border-b border-hairline">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <Eyebrow>Consultation Booking</Eyebrow>
-          <SectionTitle className="mt-4">Reserve a time, share your context.</SectionTitle>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-muted">
-            Pick an available slot on the calendar, then tell me a little about your
-            child so the first session is focused and useful.
+        <div className="mx-auto max-w-6xl px-6 pt-20 pb-20 md:pt-28 md:pb-28">
+          <Eyebrow>— Consultation Booking</Eyebrow>
+          <h1 className="mt-6 max-w-4xl font-display text-5xl leading-[1.05] md:text-7xl">
+            Reserve a time. Share your context.
+          </h1>
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-muted md:text-xl">
+            Pick an available slot on the calendar, then tell me a little about your child
+            so the first session is focused and useful.
           </p>
         </div>
       </section>
 
       <section>
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:py-20 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-16 px-6 py-20 md:py-28 lg:grid-cols-12">
           {/* Left — Google Calendar embed */}
-          <div>
-            <h2 className="font-display text-2xl">1. Choose a time</h2>
-            <p className="mt-2 text-sm text-ink-muted">
+          <div className="lg:col-span-6">
+            <Eyebrow>— 01</Eyebrow>
+            <h2 className="mt-4 font-display text-3xl md:text-4xl">Choose a time</h2>
+            <p className="mt-3 text-sm text-ink-muted">
               All times shown in your local time zone.
             </p>
-            <div className="mt-6 overflow-hidden rounded-2xl border border-hairline bg-background shadow-sm">
+            <div className="mt-10 border border-hairline bg-surface">
               <div className="relative w-full" style={{ aspectRatio: "3 / 4" }}>
                 <iframe
                   src={GOOGLE_CALENDAR_EMBED_URL}
@@ -171,22 +160,26 @@ function BookingPage() {
           </div>
 
           {/* Right — Intake form */}
-          <div>
-            <h2 className="font-display text-2xl">2. Tell me about your child</h2>
-            <p className="mt-2 text-sm text-ink-muted">
+          <div className="lg:col-span-6">
+            <Eyebrow>— 02</Eyebrow>
+            <h2 className="mt-4 font-display text-3xl md:text-4xl">Tell me about your child</h2>
+            <p className="mt-3 text-sm text-ink-muted">
               Brief context only. We'll go deeper together during the consultation.
             </p>
 
             {status === "success" ? (
-              <div className="mt-6 rounded-2xl border border-primary bg-surface p-6">
-                <p className="font-display text-xl">Thank you — your intake was received.</p>
-                <p className="mt-2 text-sm text-ink-muted">
+              <div className="mt-10 border border-hairline p-10">
+                <Eyebrow>—</Eyebrow>
+                <p className="mt-6 font-display text-3xl leading-snug md:text-4xl">
+                  Thank you — your intake was received.
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-ink-muted">
                   Please complete the calendar booking on the left if you haven't yet.
                   You'll receive a confirmation email from Google Calendar.
                 </p>
                 <button
                   type="button"
-                  className="mt-4 text-sm underline underline-offset-4"
+                  className="mt-6 text-xs uppercase tracking-[0.18em] accent-underline"
                   onClick={() => setStatus("idle")}
                 >
                   Submit another intake
@@ -197,9 +190,9 @@ function BookingPage() {
                 onSubmit={handleSubmit(onSubmit)}
                 noValidate
                 autoComplete="on"
-                className="mt-6 space-y-5"
+                className="mt-10 space-y-8"
               >
-                <Field label="Parent / guardian name" error={errors.parentName?.message}>
+                <Field label="Parent / guardian name" error={errors.parentName?.message} required>
                   <input
                     type="text"
                     autoComplete="name"
@@ -209,8 +202,8 @@ function BookingPage() {
                   />
                 </Field>
 
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <Field label="Email" error={errors.email?.message}>
+                <div className="grid gap-8 sm:grid-cols-2">
+                  <Field label="Email" error={errors.email?.message} required>
                     <input
                       type="email"
                       inputMode="email"
@@ -220,7 +213,7 @@ function BookingPage() {
                       {...register("email")}
                     />
                   </Field>
-                  <Field label="Phone" error={errors.phone?.message}>
+                  <Field label="Phone" error={errors.phone?.message} required>
                     <input
                       type="tel"
                       inputMode="tel"
@@ -232,8 +225,8 @@ function BookingPage() {
                   </Field>
                 </div>
 
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <Field label="Child's age (optional)" error={errors.childAge?.message}>
+                <div className="grid gap-8 sm:grid-cols-2">
+                  <Field label="Child's age" error={errors.childAge?.message} hint="optional">
                     <input
                       type="text"
                       maxLength={20}
@@ -245,6 +238,7 @@ function BookingPage() {
                   <Field
                     label="Preferred language"
                     error={errors.preferredLanguage?.message}
+                    required
                   >
                     <select
                       className={inputCls}
@@ -261,12 +255,8 @@ function BookingPage() {
                   </Field>
                 </div>
 
-                <Field label="Area of concern" error={errors.areaOfConcern?.message}>
-                  <select
-                    className={inputCls}
-                    defaultValue=""
-                    {...register("areaOfConcern")}
-                  >
+                <Field label="Area of concern" error={errors.areaOfConcern?.message} required>
+                  <select className={inputCls} defaultValue="" {...register("areaOfConcern")}>
                     <option value="" disabled>
                       Select an area…
                     </option>
@@ -278,7 +268,7 @@ function BookingPage() {
                   </select>
                 </Field>
 
-                <Field label="Anything else? (optional)" error={errors.notes?.message}>
+                <Field label="Anything else?" error={errors.notes?.message} hint="optional">
                   <textarea
                     rows={4}
                     maxLength={1000}
@@ -288,15 +278,15 @@ function BookingPage() {
                   />
                 </Field>
 
-                <label className="flex items-start gap-3 text-sm text-ink-muted">
+                <label className="flex items-start gap-3 pt-2 text-sm leading-relaxed text-ink-muted">
                   <input
                     type="checkbox"
-                    className="mt-1 h-4 w-4 rounded border-hairline text-primary focus:ring-primary"
+                    className="mt-1 h-4 w-4 border-hairline text-accent focus:ring-accent"
                     {...register("consent")}
                   />
                   <span>
-                    I agree to be contacted about my booking and understand my details
-                    will be handled confidentially.
+                    I agree to be contacted about my booking and understand my details will
+                    be handled confidentially.
                   </span>
                 </label>
                 {errors.consent?.message && (
@@ -304,25 +294,28 @@ function BookingPage() {
                 )}
 
                 {status === "error" && errorMsg && (
-                  <p className="rounded-md border border-destructive bg-destructive/5 px-3 py-2 text-sm text-destructive">
+                  <p className="border border-destructive/40 px-4 py-3 text-sm text-destructive">
                     {errorMsg}
                   </p>
                 )}
 
-                <button
-                  type="submit"
-                  disabled={status === "submitting"}
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
-                >
-                  {status === "submitting" ? "Submitting…" : "Send intake"}
-                </button>
+                <div className="pt-4">
+                  <button
+                    type="submit"
+                    disabled={status === "submitting"}
+                    className="inline-flex items-center gap-2 border border-foreground bg-foreground px-8 py-3 text-sm text-background transition-colors hover:bg-transparent hover:text-foreground disabled:opacity-60"
+                  >
+                    {status === "submitting" ? "Submitting…" : "Send intake"}{" "}
+                    <span aria-hidden>→</span>
+                  </button>
+                </div>
               </form>
             )}
 
-            <p className="mt-8 border-t border-hairline pt-6 text-xs leading-relaxed text-ink-muted">
-              <strong className="font-medium text-foreground">Privacy.</strong> All data
-              is handled in strict accordance with HK PDPO guidelines. Please do not
-              submit sensitive medical records via this form.
+            <p className="mt-12 border-t border-hairline pt-6 text-xs leading-relaxed text-ink-muted">
+              <strong className="font-medium text-foreground">Privacy.</strong> All data is
+              handled in strict accordance with HK PDPO guidelines. Please do not submit
+              sensitive medical records via this form.
             </p>
           </div>
         </div>
@@ -332,24 +325,32 @@ function BookingPage() {
 }
 
 const inputCls =
-  "w-full rounded-md border border-hairline bg-background px-3 py-2.5 text-sm text-foreground placeholder:text-ink-muted/60 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary";
+  "w-full border-0 border-b border-hairline bg-transparent py-3 text-base outline-none transition-colors focus:border-foreground";
 
 function Field({
   label,
   error,
+  hint,
+  required,
   children,
 }: {
   label: string;
   error?: string;
+  hint?: string;
+  required?: boolean;
   children: React.ReactNode;
 }) {
   return (
     <div>
-      <label className="mb-1.5 block text-xs uppercase tracking-wider text-ink-muted">
-        {label}
+      <label className="eyebrow flex items-baseline justify-between">
+        <span>
+          {label}
+          {required && <span className="text-accent"> *</span>}
+        </span>
+        {hint && <span className="text-[10px] normal-case tracking-normal">{hint}</span>}
       </label>
-      {children}
-      {error && <p className="mt-1 text-xs text-destructive">{error}</p>}
+      <div className="mt-3">{children}</div>
+      {error && <p className="mt-2 text-xs text-destructive">{error}</p>}
     </div>
   );
 }
