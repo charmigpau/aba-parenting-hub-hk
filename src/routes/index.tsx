@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell, Eyebrow, SectionTitle } from "@/components/site/PageShell";
+import { HeroSection } from "@/components/site/HeroSection";
 import { useLang } from "@/i18n/LanguageProvider";
 
 export const Route = createFileRoute("/")({
@@ -23,29 +24,7 @@ function Index() {
   const { t } = useLang();
   return (
     <PageShell>
-      {/* Hero */}
-      <section className="border-b border-hairline">
-        <div className="mx-auto max-w-6xl px-6 pt-20 pb-24 md:pt-32 md:pb-32">
-          <Eyebrow>{t.home.eyebrow}</Eyebrow>
-          <h1 className="fade-up mt-6 max-w-4xl font-display text-5xl leading-[1.02] sm:text-6xl md:text-7xl lg:text-[5.5rem]">
-            {t.home.headline}
-          </h1>
-          <p className="fade-up mt-8 max-w-2xl text-lg text-ink-muted md:text-xl" style={{ animationDelay: "120ms" }}>
-            {t.home.sub}
-          </p>
-          <div className="fade-up mt-10 flex flex-wrap items-center gap-6" style={{ animationDelay: "240ms" }}>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 border border-foreground bg-foreground px-6 py-3 text-sm text-background transition-colors hover:bg-transparent hover:text-foreground"
-            >
-              {t.cta.book} <span aria-hidden>→</span>
-            </Link>
-            <Link to="/services" className="text-sm accent-underline">
-              {t.cta.learnMore}
-            </Link>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Intro */}
       <section className="border-b border-hairline">
