@@ -73,13 +73,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Charming Pau, BCBA — Trilingual ABA Therapy & Parent Coaching in Hong Kong" },
+      { title: "Charming, BCBA — ABA Therapy & Parent Coaching in Hong Kong" },
       {
         name: "description",
         content:
           "Trilingual (English, Cantonese, Mandarin) Board Certified Behavior Analyst in Hong Kong. ABA therapy, parent consultation, and evidence-based parenting tips.",
       },
-      { property: "og:title", content: "Charming Pau, BCBA — Trilingual ABA in Hong Kong" },
+      { property: "og:title", content: "Charming, BCBA — ABA Therapy & Parent Coaching in Hong Kong" },
       {
         property: "og:description",
         content:
@@ -88,6 +88,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Charming Pau, BCBA" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Charming, BCBA — ABA Therapy & Parent Coaching in Hong Kong" },
+      { name: "description", content: "As a Third Culture Mom and Board Certified Behavior Analyst (BCBA), I intimately understand the tightrope of parenting—balancing high-stakes local pre" },
+      { property: "og:description", content: "As a Third Culture Mom and Board Certified Behavior Analyst (BCBA), I intimately understand the tightrope of parenting—balancing high-stakes local pre" },
+      { name: "twitter:description", content: "As a Third Culture Mom and Board Certified Behavior Analyst (BCBA), I intimately understand the tightrope of parenting—balancing high-stakes local pre" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/60f7164c-e541-44cf-bcbf-015e2e35c798/id-preview-6a8b0ccb--53690f0f-74d9-40c2-8dad-f191676962be.lovable.app-1780237192162.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/60f7164c-e541-44cf-bcbf-015e2e35c798/id-preview-6a8b0ccb--53690f0f-74d9-40c2-8dad-f191676962be.lovable.app-1780237192162.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -95,7 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Noto+Serif+TC:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Noto+Serif+TC:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap",
       },
     ],
     scripts: [
