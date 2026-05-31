@@ -531,7 +531,6 @@ const zhHans: Dict = {
 
 export const DICTS: Record<Lang, Dict> = {
   en,
-  "zh-HK": zhHant,
   "zh-TW": zhHant,
 };
 // zhHans kept for reference but not exposed
