@@ -8,7 +8,7 @@ export const LANGS: { code: Lang; label: string; htmlLang: string }[] = [
 
 export type Dict = {
   brand: { name: string; tag: string };
-  nav: { home: string; about: string; services: string; tips: string; contact: string };
+  nav: { home: string; about: string; services: string; tips: string; contact: string; resources: string; clinic: string };
   cta: { book: string; learnMore: string; readTips: string; followAlong: string };
   home: {
     eyebrow: string;
@@ -21,6 +21,8 @@ export type Dict = {
     servicesEyebrow: string;
     servicesTitle: string;
     servicesBody: string;
+    heroCtaBrand: string;
+    heroCtaClinical: string;
   };
   about: {
     eyebrow: string;
