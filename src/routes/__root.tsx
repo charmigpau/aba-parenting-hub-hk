@@ -109,7 +109,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "Trilingual Board Certified Behavior Analyst offering ABA therapy and parent consultation in Hong Kong.",
           areaServed: "Hong Kong",
           email: "charmingpau@sdfkhk.com",
-          knowsLanguage: ["en", "zh-Hant", "zh-Hans"],
+          knowsLanguage: ["en", "zh-HK", "zh-Hant"],
         }),
       },
       { src: "https://www.instagram.com/embed.js", async: true, defer: true },
