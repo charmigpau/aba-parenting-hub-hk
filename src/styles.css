@@ -39,35 +39,36 @@
 :root {
   --radius: 0.25rem;
 
-  /* Brand palette
-     Oatmeal #FAF8F5 · Slate Gray #4A4A4A · Sage Green #7D8C7D · Soft Gold #C5A059
+  /* Brand palette — warm organic refinement
+     Warmer Oatmeal #F8F5F0 · Deep Slate #2C2C2C · Muted Slate #52525B
+     Sage #8DA390 · Gold #B69146 · Cream surface #FFFFFF
   */
-  --background: oklch(0.972 0.005 80);          /* #FAF8F5 oatmeal */
-  --foreground: oklch(0.42 0 0);                /* #4A4A4A slate gray */
-  --surface: oklch(0.935 0.008 80);             /* soft oatmeal */
-  --ink-muted: oklch(0.55 0.005 80);
-  --hairline: oklch(0.86 0.008 80);
+  --background: oklch(0.965 0.008 80);          /* #F8F5F0 warm oatmeal */
+  --foreground: oklch(0.30 0.005 70);           /* #2C2C2C deep slate */
+  --surface: oklch(1 0 0);                       /* pure white for elevated cards */
+  --ink-muted: oklch(0.48 0.008 70);            /* #52525B */
+  --hairline: oklch(0.91 0.008 80);             /* very soft */
 
-  --card: oklch(0.972 0.005 80);
-  --card-foreground: oklch(0.42 0 0);
-  --popover: oklch(0.972 0.005 80);
-  --popover-foreground: oklch(0.42 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.30 0.005 70);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.30 0.005 70);
 
-  --primary: oklch(0.62 0.025 145);             /* #7D8C7D sage green */
+  --primary: oklch(0.65 0.03 145);              /* #8DA390 sage */
   --primary-foreground: oklch(0.98 0.005 80);
-  --secondary: oklch(0.935 0.008 80);
-  --secondary-foreground: oklch(0.42 0 0);
-  --muted: oklch(0.935 0.008 80);
-  --muted-foreground: oklch(0.55 0.005 80);
-  --accent: oklch(0.745 0.105 80);              /* #C5A059 soft gold */
-  --accent-foreground: oklch(0.25 0.01 80);
+  --secondary: oklch(0.94 0.01 80);
+  --secondary-foreground: oklch(0.30 0.005 70);
+  --muted: oklch(0.94 0.01 80);
+  --muted-foreground: oklch(0.48 0.008 70);
+  --accent: oklch(0.69 0.10 80);                /* #B69146 deeper gold */
+  --accent-foreground: oklch(0.22 0.01 80);
   --destructive: oklch(0.55 0.2 27);
   --destructive-foreground: oklch(0.97 0.012 80);
-  --border: oklch(0.86 0.008 80);
-  --input: oklch(0.86 0.008 80);
-  --ring: oklch(0.745 0.105 80);
+  --border: oklch(0.91 0.008 80);
+  --input: oklch(0.91 0.008 80);
+  --ring: oklch(0.69 0.10 80);
 
-  --font-display: "Cormorant Garamond", "Source Han Serif TC", "Source Han Serif SC", "Noto Serif TC", "Noto Serif SC", ui-serif, Georgia, serif;
+  --font-display: "Lora", "Cormorant Garamond", "Source Han Serif TC", "Source Han Serif SC", "Noto Serif TC", "Noto Serif SC", ui-serif, Georgia, serif;
   --font-sans: "Montserrat", "Source Han Sans TC", "Source Han Sans SC", "Noto Sans TC", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
 }
 
