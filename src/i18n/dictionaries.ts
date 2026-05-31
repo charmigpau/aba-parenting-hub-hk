@@ -390,7 +390,7 @@ const zhHant: Dict = {
 };
 
 const zhHans: Dict = {
-  brand: { name: "包芷晴 BCBA", tag: "三语 BCBA · 香港" },
+  brand: { name: "鮑正敏 BCBA", tag: "三语 BCBA · 香港" },
   nav: { home: "首页", about: "关于", services: "服务", tips: "育儿贴士", contact: "联系", resources: "资源", clinic: "诊所" },
   cta: { book: "预约咨询", learnMore: "了解更多", readTips: "阅读贴士", followAlong: "关注我们" },
   home: {
