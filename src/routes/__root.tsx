@@ -95,7 +95,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=Noto+Serif+TC:wght@400;500&family=Noto+Serif+SC:wght@400;500&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Noto+Serif+TC:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap",
       },
     ],
     scripts: [
@@ -109,7 +109,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "Trilingual Board Certified Behavior Analyst offering ABA therapy and parent consultation in Hong Kong.",
           areaServed: "Hong Kong",
           email: "charmingpau@sdfkhk.com",
-          knowsLanguage: ["en", "zh-Hant", "zh-Hans"],
+          knowsLanguage: ["en", "zh-HK", "zh-Hant"],
         }),
       },
       { src: "https://www.instagram.com/embed.js", async: true, defer: true },

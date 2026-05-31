@@ -1,9 +1,9 @@
-export type Lang = "en" | "zh-Hant" | "zh-Hans";
+export type Lang = "en" | "zh-HK" | "zh-TW";
 
 export const LANGS: { code: Lang; label: string; htmlLang: string }[] = [
   { code: "en", label: "EN", htmlLang: "en" },
-  { code: "zh-Hant", label: "繁", htmlLang: "zh-Hant" },
-  { code: "zh-Hans", label: "简", htmlLang: "zh-Hans" },
+  { code: "zh-HK", label: "粵", htmlLang: "zh-HK" },
+  { code: "zh-TW", label: "繁", htmlLang: "zh-Hant-TW" },
 ];
 
 export type Dict = {
@@ -524,6 +524,8 @@ const zhHans: Dict = {
 
 export const DICTS: Record<Lang, Dict> = {
   en,
-  "zh-Hant": zhHant,
-  "zh-Hans": zhHans,
+  "zh-HK": zhHant,
+  "zh-TW": zhHant,
 };
+// zhHans kept for reference but not exposed
+void zhHans;

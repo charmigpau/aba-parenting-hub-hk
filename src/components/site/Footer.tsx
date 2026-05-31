@@ -50,8 +50,9 @@ export function Footer() {
         </div>
       </div>
       <div className="hairline">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6 text-xs text-ink-muted">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-2 px-6 py-6 text-xs text-ink-muted md:flex-row md:items-center">
           <span>© {new Date().getFullYear()} {t.brand.name}.</span>
+          <span className="tracking-wide">BCBA Certification Number: 1-21-55972</span>
           <span>{t.footer.rights}</span>
         </div>
       </div>

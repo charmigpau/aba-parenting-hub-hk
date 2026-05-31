@@ -39,36 +39,36 @@
 :root {
   --radius: 0.25rem;
 
-  /* Editorial palette
-     bg #f5f3ee   surface #e8e4dd   ink #0d0d0d   accent #c9a84c
+  /* Brand palette
+     Oatmeal #FAF8F5 · Slate Gray #4A4A4A · Sage Green #7D8C7D · Soft Gold #C5A059
   */
-  --background: oklch(0.965 0.012 80);
-  --foreground: oklch(0.18 0.005 60);
-  --surface: oklch(0.918 0.014 75);
-  --ink-muted: oklch(0.45 0.008 60);
-  --hairline: oklch(0.82 0.012 75);
+  --background: oklch(0.972 0.005 80);          /* #FAF8F5 oatmeal */
+  --foreground: oklch(0.42 0 0);                /* #4A4A4A slate gray */
+  --surface: oklch(0.935 0.008 80);             /* soft oatmeal */
+  --ink-muted: oklch(0.55 0.005 80);
+  --hairline: oklch(0.86 0.008 80);
 
-  --card: oklch(0.965 0.012 80);
-  --card-foreground: oklch(0.18 0.005 60);
-  --popover: oklch(0.965 0.012 80);
-  --popover-foreground: oklch(0.18 0.005 60);
+  --card: oklch(0.972 0.005 80);
+  --card-foreground: oklch(0.42 0 0);
+  --popover: oklch(0.972 0.005 80);
+  --popover-foreground: oklch(0.42 0 0);
 
-  --primary: oklch(0.18 0.005 60);
-  --primary-foreground: oklch(0.97 0.012 80);
-  --secondary: oklch(0.918 0.014 75);
-  --secondary-foreground: oklch(0.18 0.005 60);
-  --muted: oklch(0.918 0.014 75);
-  --muted-foreground: oklch(0.45 0.008 60);
-  --accent: oklch(0.76 0.13 85);
-  --accent-foreground: oklch(0.18 0.005 60);
+  --primary: oklch(0.62 0.025 145);             /* #7D8C7D sage green */
+  --primary-foreground: oklch(0.98 0.005 80);
+  --secondary: oklch(0.935 0.008 80);
+  --secondary-foreground: oklch(0.42 0 0);
+  --muted: oklch(0.935 0.008 80);
+  --muted-foreground: oklch(0.55 0.005 80);
+  --accent: oklch(0.745 0.105 80);              /* #C5A059 soft gold */
+  --accent-foreground: oklch(0.25 0.01 80);
   --destructive: oklch(0.55 0.2 27);
   --destructive-foreground: oklch(0.97 0.012 80);
-  --border: oklch(0.82 0.012 75);
-  --input: oklch(0.82 0.012 75);
-  --ring: oklch(0.76 0.13 85);
+  --border: oklch(0.86 0.008 80);
+  --input: oklch(0.86 0.008 80);
+  --ring: oklch(0.745 0.105 80);
 
-  --font-display: "Instrument Serif", "Noto Serif TC", "Noto Serif SC", ui-serif, Georgia, serif;
-  --font-sans: "Inter", "Noto Sans TC", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", "Source Han Serif TC", "Source Han Serif SC", "Noto Serif TC", "Noto Serif SC", ui-serif, Georgia, serif;
+  --font-sans: "Montserrat", "Source Han Sans TC", "Source Han Sans SC", "Noto Sans TC", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -85,6 +85,26 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv11";
+    position: relative;
+  }
+
+  /* Subtle linen texture overlay — removes digital coldness */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.29  0 0 0 0 0.29  0 0 0 0 0.29  0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-size: 220px 220px;
+  }
+
+  /* Keep app content above the texture layer */
+  body > * {
+    position: relative;
+    z-index: 1;
   }
 
   ::selection {
