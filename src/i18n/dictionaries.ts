@@ -1,9 +1,8 @@
-export type Lang = "en" | "zh-HK" | "zh-TW";
+export type Lang = "en" | "zh-TW";
 
 export const LANGS: { code: Lang; label: string; htmlLang: string }[] = [
   { code: "en", label: "EN", htmlLang: "en" },
-  { code: "zh-HK", label: "粵", htmlLang: "zh-HK" },
-  { code: "zh-TW", label: "繁", htmlLang: "zh-Hant-TW" },
+  { code: "zh-TW", label: "繁", htmlLang: "zh-Hant" },
 ];
 
 export type Dict = {
@@ -246,7 +245,7 @@ const en: Dict = {
 };
 
 const zhHant: Dict = {
-  brand: { name: "包芷晴 BCBA", tag: "三語 BCBA · 香港" },
+  brand: { name: "鮑正敏 BCBA", tag: "三語 BCBA · 香港" },
   nav: { home: "首頁", about: "關於", services: "服務", tips: "育兒貼士", contact: "聯絡", resources: "資源", clinic: "診所" },
   cta: { book: "預約諮詢", learnMore: "了解更多", readTips: "閱讀貼士", followAlong: "追蹤我們" },
   home: {
@@ -391,7 +390,7 @@ const zhHant: Dict = {
 };
 
 const zhHans: Dict = {
-  brand: { name: "包芷晴 BCBA", tag: "三语 BCBA · 香港" },
+  brand: { name: "鮑正敏 BCBA", tag: "三语 BCBA · 香港" },
   nav: { home: "首页", about: "关于", services: "服务", tips: "育儿贴士", contact: "联系", resources: "资源", clinic: "诊所" },
   cta: { book: "预约咨询", learnMore: "了解更多", readTips: "阅读贴士", followAlong: "关注我们" },
   home: {
@@ -532,7 +531,6 @@ const zhHans: Dict = {
 
 export const DICTS: Record<Lang, Dict> = {
   en,
-  "zh-HK": zhHant,
   "zh-TW": zhHant,
 };
 // zhHans kept for reference but not exposed
