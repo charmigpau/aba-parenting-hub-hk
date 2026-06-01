@@ -15,21 +15,68 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "The Calm Home Project — Charming BCBA" },
+      { title: "CharmingBCBA | Top BCBA & SEN School Integration Specialist in Hong Kong" },
       {
         name: "description",
         content:
-          "Premium, evidence-based behavioral coaching and parenting workshops for families navigating ADHD, autism, and complex behaviors. Led by Charming Pau, BCBA.",
+          "Expert ABA therapy, school readiness, and domestic helper training in Hong Kong. Led by Charming Pau (BCBA, MPH). Book a consultation for your family today.",
       },
-      { property: "og:title", content: "The Calm Home Project — Charming BCBA" },
+      { property: "og:title", content: "CharmingBCBA | Top BCBA & SEN School Integration Specialist in Hong Kong" },
       {
         property: "og:description",
         content:
-          "Transform power struggles into connected parenting. Premium workshops and 1:1 coaching led by a Board Certified Behavior Analyst.",
+          "Expert ABA therapy, school readiness, and domestic helper training in Hong Kong. Led by Charming Pau (BCBA, MPH).",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:image", content: "/assets/charming-brand-preview.png" },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://charmingbcba.com/" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "CharmingBCBA | Top BCBA & SEN School Integration Specialist in Hong Kong" },
+      {
+        name: "twitter:description",
+        content:
+          "Expert ABA therapy, school readiness, and domestic helper training in Hong Kong. Led by Charming Pau (BCBA, MPH).",
+      },
+      { name: "twitter:image", content: "/assets/charming-brand-preview.png" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: "https://charmingbcba.com/" },
+      { rel: "alternate", hreflang: "en", href: "https://charmingbcba.com/" },
+      { rel: "alternate", hreflang: "zh-HK", href: "https://charmingbcba.com/?lang=zh" },
+      { rel: "alternate", hreflang: "x-default", href: "https://charmingbcba.com/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "MedicalBusiness",
+          name: "CharmingBCBA",
+          image: "https://charmingbcba.com/assets/logo.png",
+          description:
+            "Expert ABA therapy, school readiness, and domestic helper training in Hong Kong. Led by Charming Pau (BCBA, MPH).",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Hong Kong Island",
+            addressCountry: "HK",
+          },
+          founder: {
+            "@type": "Person",
+            name: "Charming Pau",
+            jobTitle: "BCBA, MPH",
+          },
+          knowsAbout: [
+            "Applied Behavior Analysis",
+            "Special Educational Needs",
+            "Parent Consultation",
+            "Helper Training",
+            "School Integration",
+          ],
+          priceRange: "$$$",
+          telephone: "+852",
+        }),
+      },
+    ],
   }),
 });
 
