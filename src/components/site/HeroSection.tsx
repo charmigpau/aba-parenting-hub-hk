@@ -4,18 +4,18 @@ import { useLang } from "@/i18n/LanguageProvider";
 const COPY = {
   en: {
     badge: "🇭🇰 CLINICAL INTEGRITY & CHILDHOOD BRILLIANCE",
-    headline: "Let's build a version of therapy where your child truly thrives.",
-    sub: "Founded by Board Certified Behavior Analyst Charming Pau (鮑正敏), CharmingBCBA delivers personalized, neurodiversity-affirming behavioral care and school consultation across Hong Kong. Rooted in curiosity, guided by data, and built for lasting growth.",
-    primary: "Begin the Journey",
-    secondary: "Explore School Partnerships",
+    headline: "Bridging the gap between clinical therapy, home life, and school success in Hong Kong.",
+    sub: "Dual-credentialed BCBA and Public Health professional helping neurodivergent children thrive in top-tier schools, and empowering parents and domestic helpers to build a consistent Family Ecosystem.",
+    primary: "Book a Consultation",
+    secondary: "Explore My Services",
     meta: "Hong Kong · English · 繁體中文 · 普通話",
   },
   zh: {
-    badge: "🇭🇰 兼具臨床嚴謹與孩子天賦的行為治療",
-    headline: "讓我們攜手，為孩子打造真正展現潛能的治療方案。",
-    sub: "由國際認證行為分析師 (BCBA) 鮑正敏 (Charming Pau) 創辦，CharmingBCBA 將國際臨床數據與尊重神經多樣性的理念相結合，為本港家庭、外籍家長及國際學校提供個別化的行為及校園支援服務。",
-    primary: "開啟成長旅程",
-    secondary: "探索學校合作項目",
+    badge: "🇭🇰 連結臨床治療、家庭生活與校園成就",
+    headline: "在臨床治療、家庭生活與校園成就之間，為香港孩子搭建橋樑。",
+    sub: "由兼具國際認證行為分析師 (BCBA) 及公共衛生專業資歷的鮑正敏創辦，協助神經多樣性孩子於頂尖學校綻放光芒，並賦能家長與家庭傭工，共同建立穩定一致的「家庭生態系統」。",
+    primary: "預約諮詢",
+    secondary: "探索服務內容",
     meta: "香港 · English · 繁體中文 · 普通話",
   },
 } as const;
@@ -133,7 +133,7 @@ export function HeroSection() {
                     </span>
                   </Link>
                   <Link
-                    to="/clinic"
+                    to="/services"
                     className="group inline-flex w-full items-center justify-between gap-3 rounded-full border border-foreground/25 bg-transparent px-6 py-3.5 text-sm font-medium text-foreground transition-all hover:-translate-y-0.5 hover:border-foreground hover:bg-foreground/[0.03]"
                   >
                     <span>{c.secondary}</span>
