@@ -1,3 +1,5 @@
+import heroImage from "@/assets/hero-mother-child.jpg";
+
 export function HeroCalmHome() {
   return (
     <section className="urban-cozy-container">
@@ -24,10 +26,13 @@ export function HeroCalmHome() {
           <div className="hero-visual-frame">
             <div className="solid-offset-backdrop" />
             <div className="botanical-illustration-container">
-              <svg className="botanical-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M50 90C50 90 48 50 60 30M60 30C65 20 55 10 50 15C45 10 35 20 40 30M40 30C52 50 50 90 50 90" stroke="#7D8C7D" strokeWidth="1.5" strokeLinecap="round" />
-                <path d="M47 55C42 53 40 48 45 46C50 44 52 50 47 55Z" fill="#C5A059" opacity="0.8" />
-              </svg>
+              <img
+                src={heroImage}
+                alt="Watercolor illustration of a mother holding her child's hand under a blooming branch"
+                width={1024}
+                height={1024}
+                className="hero-illustration-img"
+              />
             </div>
           </div>
         </div>
