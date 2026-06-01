@@ -3,20 +3,20 @@ import { useLang } from "@/i18n/LanguageProvider";
 
 const COPY = {
   en: {
-    badge: "🇭🇰 CLINICAL INTEGRITY & CHILDHOOD BRILLIANCE",
-    headline: "Bridging the gap between clinical therapy, home life, and school success in Hong Kong.",
-    sub: "Dual-credentialed BCBA and Public Health professional helping neurodivergent children thrive in top-tier schools, and empowering parents and domestic helpers to build a consistent Family Ecosystem.",
-    primary: "Book a Consultation",
-    secondary: "Explore My Services",
-    meta: "Hong Kong · English · 繁體中文 · 普通話",
+    badge: "Hong Kong · English · 繁體中文 · 普通話",
+    headline: "Gentle, Evidence-Based Behavior Support for Hong Kong Families.",
+    sub: "We empower parents, domestic helpers, and educators with practical, human-centered strategies. Combining clinical BCBA rigor with compassionate care to prepare your child for school readiness and bring harmony to your home.",
+    primary: "Book a Free Discovery Call",
+    secondary: "Our Approach",
+    meta: "BCBA · MPH · Trilingual Support",
   },
   zh: {
-    badge: "🇭🇰 連結臨床治療、家庭生活與校園成就",
-    headline: "在臨床治療、家庭生活與校園成就之間，為香港孩子搭建橋樑。",
-    sub: "由兼具國際認證行為分析師 (BCBA) 及公共衛生專業資歷的鮑正敏創辦，協助神經多樣性孩子於頂尖學校綻放光芒，並賦能家長與家庭傭工，共同建立穩定一致的「家庭生態系統」。",
-    primary: "預約諮詢",
-    secondary: "探索服務內容",
-    meta: "香港 · English · 繁體中文 · 普通話",
+    badge: "香港 · English · 繁體中文 · 普通話",
+    headline: "為香港家庭提供溫和、實證為本的行為支援。",
+    sub: "我們賦能家長、家庭傭工及教育工作者，以實用、以人為本的策略，結合臨床BCBA的嚴謹與關懷備至的照顧，協助孩子做好上學準備，為家庭帶來和諧。",
+    primary: "預約免費諮詢",
+    secondary: "我們的理念",
+    meta: "BCBA · MPH · 三語支援",
   },
 } as const;
 
@@ -97,8 +97,8 @@ export function HeroSection() {
           {/* Right column — headline + sub + CTAs */}
           <div className="lg:col-span-9">
             <h1
-              className="fade-up font-display text-[2.25rem] leading-[1.08] tracking-[-0.015em] text-foreground sm:text-5xl md:text-6xl lg:text-[4.25rem]"
-              style={{ animationDelay: "120ms", fontWeight: 500 }}
+              className="fade-up font-display text-[2.25rem] leading-[1.12] tracking-[-0.015em] text-foreground sm:text-5xl md:text-6xl lg:text-[4.25rem]"
+              style={{ animationDelay: "120ms", fontWeight: 400 }}
             >
               {c.headline}
             </h1>
@@ -120,11 +120,11 @@ export function HeroSection() {
 
               <div className="md:col-span-5 md:border-l md:border-foreground/10 md:pl-8">
                 <p className="text-[10px] uppercase tracking-[0.22em] text-foreground/50">
-                  {isZh ? "預約諮詢" : "Begin a conversation"}
+                  {isZh ? "預約免費諮詢" : "Begin a conversation"}
                 </p>
                 <div className="mt-5 flex flex-col gap-3">
                   <Link
-                    to="/contact"
+                    to="/booking"
                     className="group inline-flex w-full items-center justify-between gap-3 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all hover:-translate-y-0.5 hover:bg-foreground/90"
                   >
                     <span>{c.primary}</span>
@@ -133,7 +133,7 @@ export function HeroSection() {
                     </span>
                   </Link>
                   <Link
-                    to="/services"
+                    to="/about"
                     className="group inline-flex w-full items-center justify-between gap-3 rounded-full border border-foreground/25 bg-transparent px-6 py-3.5 text-sm font-medium text-foreground transition-all hover:-translate-y-0.5 hover:border-foreground hover:bg-foreground/[0.03]"
                   >
                     <span>{c.secondary}</span>
