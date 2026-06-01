@@ -66,13 +66,16 @@ export function JournalBridgeSection() {
               strokeLinejoin="round"
             />
           </svg>
-          <span className="scribbled-note">Keep reading...</span>
+          <span className="scribbled-note">{isZh ? "繼續閱讀…" : "Keep reading..."}</span>
         </div>
 
         {/* SECTION B */}
         <div className="content-block-b journal-flow">
           <div className="col-text">
-            <p className="en-serif">A sanctuary for parental growth.</p>
+            <p className={isZh ? "zh-serif" : "en-serif"}>
+              {isZh ? "一個讓父母安心成長的港灣。" : "A sanctuary for parental growth."}
+            </p>
+
 
             <div className="inline-arrow-wrap">
               <svg
