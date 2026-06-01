@@ -150,8 +150,27 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Navigation */}
+          {/* Navigation + Social */}
           <div className="footer-col col-links">
+            <h4 className="footer-heading">{copy.socialHeading}</h4>
+            <ul className="footer-link-list" style={{ marginBottom: 28 }}>
+              {copy.socialLinks.map((s) => (
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="editorial-link social-editorial-link"
+                  >
+                    <span className="social-icon" aria-hidden="true">{s.icon}</span>{" "}
+                    <span className="social-text">
+                      {s.label} <span className="handle">{s.handle}</span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+
             <h4 className="footer-heading">{copy.navHeading}</h4>
             <ul className="footer-link-list">
               {copy.links.map((l) => (
