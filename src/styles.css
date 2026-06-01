@@ -312,3 +312,208 @@
 
 .hero-illustration-img { width: 100%; height: auto; display: block; mix-blend-mode: multiply; }
 
+
+/* ============ Editorial Whimsical Journal Hero ============ */
+.editorial-canvas {
+  background: var(--bg-oatmeal);
+  padding: 64px 24px;
+  font-family: var(--font-sans);
+  color: var(--text-slate);
+}
+.journal-entry {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Watercolor dots */
+.watercolor-dots-container {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+.watercolor-dots-container .dot {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  display: inline-block;
+  filter: blur(0.4px);
+  opacity: 0.85;
+}
+.dot-1 { background: radial-gradient(circle at 35% 30%, #A8B7A4, #6E7F6E); }
+.dot-2 { background: radial-gradient(circle at 30% 30%, #E1C786, #B68C3C); }
+.dot-3 { background: radial-gradient(circle at 40% 35%, #D4A5A5, #9B6B6B); }
+.dot-4 { background: radial-gradient(circle at 35% 25%, #B7C3D6, #6B7E97); }
+.dot-5 { background: radial-gradient(circle at 35% 30%, #4F5D4F, #2E382E); }
+
+/* Header */
+.header-group { margin-bottom: 28px; }
+.editorial-eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--secondary-forest);
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--accent-gold);
+  padding-bottom: 4px;
+}
+
+.whimsical-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.1;
+  color: var(--secondary-forest);
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+.scribble-strikeout-wrapper {
+  position: relative;
+  display: inline-block;
+  font-style: italic;
+  color: var(--text-slate);
+}
+.scribble-svg {
+  position: absolute;
+  left: -2%;
+  bottom: 12%;
+  width: 104%;
+  height: 0.7em;
+  color: var(--accent-gold);
+  pointer-events: none;
+}
+
+.whimsical-subtitle {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  line-height: 1.35;
+  color: var(--text-slate);
+  margin: 0;
+}
+.highlight-marker {
+  background: linear-gradient(180deg, transparent 55%, rgba(197, 160, 89, 0.42) 55%, rgba(197, 160, 89, 0.42) 92%, transparent 92%);
+  padding: 0 6px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.78em;
+  letter-spacing: 0.08em;
+  color: var(--secondary-forest);
+}
+.pencil-circle-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 4px 14px;
+  font-style: italic;
+}
+.circle-svg {
+  position: absolute;
+  inset: -6px -4px -6px -4px;
+  width: calc(100% + 8px);
+  height: calc(100% + 12px);
+  color: var(--primary-sage);
+  pointer-events: none;
+}
+
+/* Hand-ruled divider */
+.hand-ruled-line {
+  border: none;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, var(--text-light) 0 6px, transparent 6px 10px);
+  margin: 36px 0 40px;
+  opacity: 0.55;
+}
+
+/* Journal flow split */
+.journal-flow {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .journal-flow { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.trilingual-passage p { margin: 0 0 14px; line-height: 1.6; }
+.en-serif {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--secondary-forest);
+}
+.zh-serif {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--text-slate);
+}
+.cantonese-sans {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--text-light);
+}
+
+.cta-button-container { margin-top: 28px; }
+.hand-drawn-btn {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  color: var(--secondary-forest);
+  text-decoration: none;
+  padding: 4px 4px 14px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+.hand-drawn-btn:hover { color: var(--accent-gold); transform: translateX(2px); }
+.btn-underline-svg {
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 8px;
+  color: var(--accent-gold);
+}
+
+/* Illustration frame */
+.watercolor-frame {
+  position: relative;
+  padding: 18px;
+}
+.illustration-canvas {
+  position: relative;
+  background: #fffdf8;
+  border: 1px solid rgba(125, 140, 125, 0.25);
+  padding: 14px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+}
+.storybook-doodle {
+  display: block;
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+}
+.watercolor-shadow {
+  position: absolute;
+  inset: 12px -10px -14px 14px;
+  background: radial-gradient(ellipse at 30% 40%, rgba(197,160,89,0.18), transparent 65%),
+              radial-gradient(ellipse at 75% 70%, rgba(125,140,125,0.22), transparent 70%);
+  z-index: -1;
+  filter: blur(6px);
+}
+
+.hand-corner {
+  position: absolute;
+  width: 22px; height: 22px;
+  border-color: var(--secondary-forest);
+}
+.hand-corner.top-left {
+  top: -2px; left: -2px;
+  border-top: 2px solid; border-left: 2px solid;
+  border-top-left-radius: 4px;
+}
+.hand-corner.bottom-right {
+  bottom: -2px; right: -2px;
+  border-bottom: 2px solid; border-right: 2px solid;
+  border-bottom-right-radius: 4px;
+}
