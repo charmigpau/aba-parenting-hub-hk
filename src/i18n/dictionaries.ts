@@ -1,9 +1,60 @@
-export type Lang = "en" | "zh-TW";
+export type Lang = "en" | "zh-HK";
 
 export const LANGS: { code: Lang; label: string; htmlLang: string }[] = [
   { code: "en", label: "EN", htmlLang: "en" },
-  { code: "zh-TW", label: "繁", htmlLang: "zh-Hant" },
+  { code: "zh-HK", label: "繁", htmlLang: "zh-Hant-HK" },
 ];
+
+/**
+ * Strict, clinically-vetted glossary shared across the site.
+ * Hong Kong Traditional Chinese (繁體中文) — never Simplified.
+ */
+export const GLOSSARY = {
+  en: {
+    aba: "Applied Behavior Analysis (ABA)",
+    bst: "Behavioral Skills Training (BST)",
+    bcba: "Board Certified Behavior Analyst (BCBA)",
+    sen: "Special Educational Needs (SEN)",
+    relational_security: "Relational Security",
+    parent_consult: "Parent Consultation",
+    neuroscience: "Neuroscience",
+    positive_reinforcement: "Positive Reinforcement",
+    natural_teaching: "Natural Environment Training (NET)",
+    discovery_call: "15-Minute Free Discovery Call",
+    home_vibe_q: "Which landscape captures your current home vibe?",
+    hk_third_way: "The HK Third Way",
+  },
+  "zh-HK": {
+    aba: "應用行為分析 (ABA)",
+    bst: "行為技能培訓 (BST)",
+    bcba: "國際認證行為分析師 (BCBA)",
+    sen: "特殊教育需要 (SEN)",
+    relational_security: "關係安全感",
+    parent_consult: "家長諮詢與指導",
+    neuroscience: "腦神經科學",
+    positive_reinforcement: "正向增強",
+    natural_teaching: "自然環境教學 (NET)",
+    discovery_call: "15分鐘免費探索諮詢",
+    home_vibe_q: "哪一個情境最貼近您現時的家庭氣氛？",
+    hk_third_way: "香港育兒第三條路",
+  },
+} as const;
+
+export type GlossaryKey = keyof typeof GLOSSARY.en;
+
+/**
+ * Colloquial Cantonese (廣東話) overlays — shown as a soft secondary
+ * line under formal 繁體中文 copy on parent-facing prompts. Keys are
+ * referenced by components that want a warm, local fallback voice.
+ */
+export const COLLOQUIAL: Record<string, string> = {
+  home_vibe_q: "你而家屋企嘅氣氛，最似邊一幅畫？",
+  discovery_call: "傾15分鐘，傾下你屋企嘅情況，免費。",
+  relational_security:
+    "等我哋一齊喺高壓嘅環境下，同仔女建立最真摯、最安穩嘅連繫。",
+  parent_consult: "搵個專業人士，傾下你而家頭痛緊嘅育兒難題。",
+  hk_third_way: "唔使硬谷，又唔使放軟手腳 — 香港家長嘅第三條路。",
+};
 
 export type Dict = {
   brand: { name: string; tag: string };
@@ -389,149 +440,8 @@ const zhHant: Dict = {
   footer: { rights: "版權所有。", followAlong: "追蹤我們", contact: "聯絡" },
 };
 
-const zhHans: Dict = {
-  brand: { name: "鮑正敏 BCBA", tag: "三语 BCBA · 香港" },
-  nav: { home: "首页", about: "关于", services: "服务", tips: "育儿贴士", contact: "联系", resources: "资源", clinic: "诊所" },
-  cta: { book: "预约咨询", learnMore: "了解更多", readTips: "阅读贴士", followAlong: "关注我们" },
-  home: {
-    eyebrow: "国际认证行为分析师",
-    headline: "以实证为本，陪伴香港家庭走每一步。",
-    sub: "三语 ABA 治疗与家长辅导 — 以研究为基础，为你的孩子量身设计。",
-    introTitle: "一个围绕你家庭而建的执业。",
-    intro:
-      "我以英文、广东话及普通话与香港的家长和孩子合作。无论你正面对新确诊、希望找到真正适合家中环境的策略，或为孩子寻找结构化的治疗，每节都会以协作的方式进行 — 而不是冷冰冰的临床安排。",
-    featuredEyebrow: "01 — 执业笔记",
-    featuredTitle: "来自实战的贴士。",
-    servicesEyebrow: "02 — 服务内容",
-    servicesTitle: "两种合作方式。",
-    servicesBody:
-      "单次家长咨询提供聚焦指导；持续 ABA 治疗则带来长期进展。两者均可于香港面授或线上进行。",
-    heroCtaBrand: "探索资源与社群",
-    heroCtaClinical: "临床服务与治疗",
-  },
-  about: {
-    eyebrow: "关于",
-    title: "你好，我是 Charming。",
-    lead:
-      "我是驻香港的国际认证行为分析师（BCBA），以三语陪伴家庭，面对自闭症、发展差异与日常育儿挑战。",
-    bio: [
-      "我接受的训练聚焦于自然情境、家长主导的应用行为分析。过去十年，我于香港及海外的诊所、学校与家庭中工作，支援家庭走过早期介入、入学准备及之后的种种过渡。",
-      "我的信念很简单：当最亲近孩子的人感到有信心、被支持并掌握合适的策略，行为改变才会真正持久。",
-    ],
-    credentialsTitle: "专业资历",
-    credentials: [
-      "国际认证行为分析师（BCBA）",
-      "应用行为分析文学硕士",
-      "香港注册社工",
-      "逾十年陪伴神经多样性儿童及其家庭的经验",
-    ],
-    languagesTitle: "语言",
-    languages: ["英文", "广东话", "普通话"],
-    approachTitle: "理念",
-    approach:
-      "以游戏为本、家长主导的自然情境介入。每个计划都由你家庭真正需要的事开始 — 再层层加入实证为本的策略。",
-  },
-  services: {
-    eyebrow: "服务",
-    title: "我们可以这样合作。",
-    lead:
-      "无论你需要针对单一挑战的聚焦指导，或长期持续的支援，每次合作都会围绕你家庭的需要而设计。",
-    items: [
-      {
-        number: "01",
-        name: "家长咨询",
-        forWho: "适合希望就某个特定行为、过渡或策略获得指引的家长。",
-        format: "60–90 分钟 · 面授或线上 · 附后续整理",
-        description:
-          "一次聚焦的对话，一同梳理正在发生的事、找出背后的成因，并带走两至三个本周即可开始实践的具体策略。",
-      },
-      {
-        number: "02",
-        name: "ABA 治疗课",
-        forWho: "适合需要持续、结构化行为支援的孩子及家庭。",
-        format: "每周 60 分钟 · 香港面授或混合模式 · 个性化计划",
-        description:
-          "围绕孩子目标而设计的个性化 ABA 计划 — 沟通、自理、社交技巧、入学准备。家长是每节的合作伙伴，并会定期检视进度与方向。",
-      },
-    ],
-  },
-  tips: {
-    eyebrow: "育儿贴士",
-    title: "把 ABA，化作日常。",
-    lead:
-      "来自执业现场的短篇实用笔记。想看更长的文章与每周更新，欢迎在 Instagram、Facebook 及 Threads 关注我。",
-    items: [
-      {
-        number: "01",
-        title: "捕捉平静的一刻。",
-        body: "当孩子做出你希望看见更多的行为时，请具体地赞赏 — 而不只是在他停止你不喜欢的行为时才开口。「我好喜欢你用温柔的手」比「不准打人」教得更多。",
-      },
-      {
-        number: "02",
-        title: "先…然后…。",
-        body: "用简单的「先穿鞋，然后去公园」结构，把较不喜欢的任务与喜欢的事连起来。配合视觉提示，可预测性会让所有人都更轻松。",
-      },
-      {
-        number: "03",
-        title: "把门槛调低，才能再调高。",
-        body: "如果一个要求总是以崩溃收场，那这要求太大了。把它拆细到孩子可以成功，然后再逐步加回难度。",
-      },
-      {
-        number: "04",
-        title: "行为，就是沟通。",
-        body: "在问「怎样令这行为停止」之前，先问「这行为在告诉我什么」。逃避、注意、获取、感官 — 功能会引导你的回应。",
-      },
-      {
-        number: "05",
-        title: "强化不是贿赂。",
-        body: "贿赂发生在问题行为开始之后；强化是事前计划好的，连系到清晰的期望，并随着新行为稳固而逐步淡出。",
-      },
-      {
-        number: "06",
-        title: "先修复，再说教。",
-        body: "事情失控时，先安抚，再修复，最后才教。说教只在平静的神经系统上才听得进去 — 包括我们自己的。",
-      },
-    ],
-    socialEyebrow: "03 — 关注我们",
-    socialTitle: "更多贴士，每周更新。",
-    socialBody: "我会在 Instagram、Facebook 及 Threads 分享 ABA 育儿短贴士、治疗幕后与常见问题解答。",
-    handles: { ig: "@charmingbcba", fb: "Charming Pau, BCBA", threads: "@charmingbcba" },
-  },
-  contact: {
-    eyebrow: "联系",
-    title: "预约一次见面。",
-    lead: "请告诉我一点关于你家庭的情况，以及你正在寻找什么。我会于两个工作天内亲自回覆。",
-    responseNote: "两个工作天内回覆 · charmingpau@sdfkhk.com",
-    form: {
-      name: "姓名",
-      email: "电邮",
-      phone: "电话",
-      phoneOptional: "选填",
-      preferredLang: "希望以哪种语言沟通",
-      service: "你希望了解哪项服务？",
-      serviceOptions: { consultation: "家长咨询", therapy: "ABA 治疗课", general: "一般查询" },
-      childAge: "孩子年龄",
-      childAgeOptional: "选填",
-      contactMethod: "希望透过哪种方式联系",
-      contactMethodOptions: { email: "电邮", phone: "电话", whatsapp: "WhatsApp" },
-      message: "请告诉我你正在寻找什么",
-      submit: "提交",
-      submitting: "传送中…",
-      success: "谢谢你 — 已收到你的请求。我会于两个工作天内亲自回覆。",
-      errors: {
-        name: "请填写你的姓名。",
-        email: "请填写电邮。",
-        emailInvalid: "请填写有效的电邮地址。",
-        message: "请告诉我一点你正在寻找什么。",
-      },
-    },
-  },
-  footer: { rights: "版权所有。", followAlong: "关注我们", contact: "联系" },
-};
-
 export const DICTS: Record<Lang, Dict> = {
   en,
-  "zh-TW": zhHant,
+  "zh-HK": zhHant,
 };
-// zhHans kept for reference but not exposed
-void zhHans;
+

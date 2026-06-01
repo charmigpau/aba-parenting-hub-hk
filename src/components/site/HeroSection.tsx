@@ -22,7 +22,7 @@ const COPY = {
 
 export function HeroSection() {
   const { lang, setLang } = useLang();
-  const isZh = lang === "zh-TW";
+  const isZh = lang === "zh-HK";
   const c = isZh ? COPY.zh : COPY.en;
 
   return (
@@ -57,7 +57,7 @@ export function HeroSection() {
           </button>
           <button
             type="button"
-            onClick={() => setLang("zh-TW")}
+            onClick={() => setLang("zh-HK")}
             aria-pressed={isZh}
             className={
               "rounded-full px-3 py-1 tracking-wider transition-colors " +

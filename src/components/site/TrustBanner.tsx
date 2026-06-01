@@ -15,7 +15,7 @@ const COPY = {
 
 export function TrustBanner() {
   const { lang } = useLang();
-  const c = lang === "zh-TW" ? COPY.zh : COPY.en;
+  const c = lang === "zh-HK" ? COPY.zh : COPY.en;
 
   return (
     <section className="border-y border-foreground/10 bg-[#FDFBF7]">

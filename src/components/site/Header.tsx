@@ -1,10 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { useLang } from "@/i18n/LanguageProvider";
-import { LANGS, type Lang } from "@/i18n/dictionaries";
 import { useState, useEffect } from "react";
+import { WhimsicalLangToggle } from "./WhimsicalLangToggle";
 
 export function Header() {
-  const { lang, setLang, t } = useLang();
+  const { lang, t } = useLang();
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -42,16 +42,19 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <LangSwitcher lang={lang} setLang={setLang} />
+          <WhimsicalLangToggle />
         </nav>
 
-        <button
-          aria-label="Menu"
-          className="md:hidden inline-flex h-9 w-9 items-center justify-center"
-          onClick={() => setOpen((o) => !o)}
-        >
-          <span className="relative block h-px w-5 bg-foreground before:absolute before:-top-1.5 before:left-0 before:h-px before:w-5 before:bg-foreground after:absolute after:top-1.5 after:left-0 after:h-px after:w-5 after:bg-foreground" />
-        </button>
+        <div className="flex items-center gap-3 md:hidden">
+          <WhimsicalLangToggle />
+          <button
+            aria-label="Menu"
+            className="inline-flex h-9 w-9 items-center justify-center"
+            onClick={() => setOpen((o) => !o)}
+          >
+            <span className="relative block h-px w-5 bg-foreground before:absolute before:-top-1.5 before:left-0 before:h-px before:w-5 before:bg-foreground after:absolute after:top-1.5 after:left-0 after:h-px after:w-5 after:bg-foreground" />
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -66,9 +69,6 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <div className="pt-4">
-              <LangSwitcher lang={lang} setLang={setLang} />
-            </div>
           </nav>
         </div>
       )}
@@ -76,26 +76,3 @@ export function Header() {
   );
 }
 
-function LangSwitcher({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
-  return (
-    <div className="flex items-center gap-1 text-xs">
-      {LANGS.map((l, i) => (
-        <span key={l.code} className="flex items-center gap-1">
-          <button
-            onClick={() => setLang(l.code)}
-            className={
-              "px-1.5 py-1 transition-colors " +
-              (lang === l.code
-                ? "text-foreground accent-underline"
-                : "text-ink-muted hover:text-foreground")
-            }
-            aria-pressed={lang === l.code}
-          >
-            {l.label}
-          </button>
-          {i < LANGS.length - 1 && <span className="text-hairline">/</span>}
-        </span>
-      ))}
-    </div>
-  );
-}

@@ -1,7 +1,23 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
-import { DICTS, LANGS, type Dict, type Lang } from "./dictionaries";
+import {
+  COLLOQUIAL,
+  DICTS,
+  GLOSSARY,
+  LANGS,
+  type Dict,
+  type GlossaryKey,
+  type Lang,
+} from "./dictionaries";
 
-type Ctx = { lang: Lang; setLang: (l: Lang) => void; t: Dict };
+type Ctx = {
+  lang: Lang;
+  setLang: (l: Lang) => void;
+  t: Dict;
+  /** Strict, clinically-vetted glossary lookup (HK Traditional Chinese only). */
+  g: (key: GlossaryKey) => string;
+  /** Warm colloquial Cantonese overlay — empty string in English mode. */
+  c: (key: string) => string;
+};
 
 const LanguageContext = createContext<Ctx | null>(null);
 
@@ -13,7 +29,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY) as Lang | null;
-      if (saved && DICTS[saved]) setLangState(saved);
+      // Migrate old codes if present
+      const normalized = saved === ("zh-TW" as Lang) ? "zh-HK" : saved;
+      if (normalized && DICTS[normalized as Lang]) setLangState(normalized as Lang);
     } catch {}
   }, []);
 
@@ -21,6 +39,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const entry = LANGS.find((l) => l.code === lang);
     if (entry && typeof document !== "undefined") {
       document.documentElement.lang = entry.htmlLang;
+      document.documentElement.dataset.lang = lang;
     }
   }, [lang]);
 
@@ -31,8 +50,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     } catch {}
   };
 
+  const g = (key: GlossaryKey) => GLOSSARY[lang][key];
+  const c = (key: string) => (lang === "zh-HK" ? COLLOQUIAL[key] ?? "" : "");
+
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t: DICTS[lang] }}>
+    <LanguageContext.Provider value={{ lang, setLang, t: DICTS[lang], g, c }}>
       {children}
     </LanguageContext.Provider>
   );

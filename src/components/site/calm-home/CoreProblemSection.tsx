@@ -32,7 +32,7 @@ const ITEMS_ZH = [
 
 export function CoreProblemSection() {
   const { lang } = useLang();
-  const isZh = lang === "zh-TW";
+  const isZh = lang === "zh-HK";
   const items = isZh ? ITEMS_ZH : ITEMS_EN;
 
   return (

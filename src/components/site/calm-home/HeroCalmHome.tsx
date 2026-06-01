@@ -3,7 +3,7 @@ import { useLang } from "@/i18n/LanguageProvider";
 
 export function HeroCalmHome() {
   const { lang } = useLang();
-  const isZh = lang === "zh-TW";
+  const isZh = lang === "zh-HK";
 
   return (
     <main className="editorial-canvas charming-theme">

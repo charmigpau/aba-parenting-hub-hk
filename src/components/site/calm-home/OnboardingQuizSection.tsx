@@ -74,14 +74,18 @@ const QUESTIONS: Question[] = [
 ];
 
 export function OnboardingQuizSection() {
-  const { lang } = useLang();
-  const isZh = lang === "zh-TW";
+  const { lang, c } = useLang();
+  const isZh = lang === "zh-HK";
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
 
   const total = QUESTIONS.length;
   const q = QUESTIONS[step];
   const progress = Math.round(((step + 1) / total) * 100);
+
+  // Colloquial Cantonese overlay — only render on the first ("home vibe") question
+  // and only when the active language is Hong Kong Traditional Chinese.
+  const colloquialOverlay = step === 0 ? c("home_vibe_q") : "";
 
   const select = (i: number) => setAnswers((a) => ({ ...a, [step]: i }));
   const next = () => setStep((s) => Math.min(total - 1, s + 1));
@@ -99,6 +103,11 @@ export function OnboardingQuizSection() {
             {isZh ? `第 ${step + 1} 題 / 共 ${total} 題` : `Reflection ${step + 1} of ${total}`}
           </span>
           <h2 className="quiz-main-title">{isZh ? q.title.zh : q.title.en}</h2>
+          {colloquialOverlay && (
+            <p className="colloquial-overlay" lang="yue-Hant-HK">
+              {colloquialOverlay}
+            </p>
+          )}
 
           <div className="crayon-progress-bar-wrap" aria-hidden="true">
             <div className="crayon-line" />
