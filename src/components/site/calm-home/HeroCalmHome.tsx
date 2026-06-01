@@ -1,75 +1,46 @@
 export function HeroCalmHome() {
   return (
-    <section className="relative overflow-hidden bg-background">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-60"
-        style={{
-          background:
-            "radial-gradient(60% 50% at 70% 20%, color-mix(in oklab, var(--primary) 22%, transparent), transparent 70%), radial-gradient(50% 45% at 15% 85%, color-mix(in oklab, var(--accent) 14%, transparent), transparent 70%)",
-        }}
-      />
-      <div className="relative mx-auto max-w-6xl px-6 pt-20 pb-24 sm:pt-28 md:pt-32 md:pb-32">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
-          <aside className="lg:col-span-3">
-            <div className="fade-up flex items-start gap-3">
-              <span aria-hidden className="mt-2 h-px w-6 bg-foreground/40" />
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.24em] text-foreground/55">
-                  The Calm Home Project
-                </p>
-                <p className="mt-2 text-[10px] uppercase tracking-[0.24em] text-foreground/55">
-                  Charming Pau · BCBA
-                </p>
-              </div>
-            </div>
-          </aside>
-
-          <div className="lg:col-span-9">
-            <h1
-              className="fade-up font-display text-[2.5rem] leading-[1.05] tracking-[-0.015em] text-foreground sm:text-5xl md:text-6xl lg:text-[4.5rem]"
-              style={{ animationDelay: "80ms", fontWeight: 500 }}
-            >
-              The Calm Home Project:
-              <span className="block text-foreground/70">
-                Transform Power Struggles Into Connected Parenting.
-              </span>
+    <section className="urban-cozy-container">
+      <div className="mx-auto max-w-6xl">
+        <div className="hero-section">
+          <div>
+            <span className="editorial-accent-tag">The Calm Home Project · Charming Pau, BCBA</span>
+            <h1 className="hero-title">
+              Transform power struggles into <span className="italic-serif">connected parenting.</span>
             </h1>
 
-            <div
-              className="fade-up mt-10 grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-12"
-              style={{ animationDelay: "200ms" }}
-            >
-              <div className="md:col-span-7">
-                <p className="text-base leading-[1.75] text-foreground/75 md:text-[1.0625rem]">
-                  A premium, evidence-based workshop series for proactive parents navigating
-                  complex behaviors, ADHD, or autism diagnoses. Learn the precise behavioral
-                  frameworks to eliminate daily burnout and restore peace to your household.
-                </p>
-              </div>
+            <div className="trilingual-group">
+              <p className="lang-zh-hant">將親子角力，化為深度連結的教養。</p>
+              <p className="lang-cantonese">由香港首屈一指的行為分析師，為高需求家庭打造的尊尚教養旅程。</p>
+            </div>
 
-              <div className="md:col-span-5 md:border-l md:border-foreground/10 md:pl-8">
-                <p className="text-[10px] uppercase tracking-[0.22em] text-foreground/50">
-                  Begin where you need it most
-                </p>
-                <div className="mt-5 flex flex-col gap-3">
-                  <a
-                    href="#workshops"
-                    className="group inline-flex w-full items-center justify-between gap-3 rounded-full px-6 py-3.5 text-sm font-medium text-background transition-all hover:-translate-y-0.5"
-                    style={{ backgroundColor: "var(--accent)" }}
-                  >
-                    <span>Secure Your Workshop Seat</span>
-                    <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-                  </a>
-                  <a
-                    href="#coaching"
-                    className="group inline-flex w-full items-center justify-between gap-3 rounded-full border border-foreground/30 bg-transparent px-6 py-3.5 text-sm font-medium text-foreground transition-all hover:-translate-y-0.5 hover:border-foreground hover:bg-foreground/[0.03]"
-                  >
-                    <span>Explore Individual Coaching</span>
-                    <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-                  </a>
-                </div>
-              </div>
+            <p className="mb-10 max-w-xl text-[1rem] leading-[1.75]" style={{ color: "var(--text-slate)" }}>
+              A premium, evidence-based workshop series and 1:1 coaching practice for proactive
+              parents navigating complex behaviors, ADHD, or autism diagnoses — built to restore
+              calm, clarity, and connection at home.
+            </p>
+
+            <div className="hero-cta-group">
+              <a href="#workshops" className="cta-primary-btn">Secure Your Workshop Seat →</a>
+              <a href="#coaching" className="cta-secondary-btn">Explore 1:1 Coaching →</a>
+            </div>
+          </div>
+
+          <div className="hero-visual-frame">
+            <div className="solid-offset-backdrop" />
+            <div className="botanical-illustration-container">
+              <svg className="botanical-svg" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M100 210 C100 140 100 90 100 30" stroke="#7D8C7D" strokeWidth="1.2" />
+                <path d="M100 150 C70 140 55 120 50 95" stroke="#7D8C7D" strokeWidth="1" fill="none" />
+                <path d="M100 130 C130 122 148 105 155 80" stroke="#7D8C7D" strokeWidth="1" fill="none" />
+                <path d="M100 110 C80 100 68 82 65 60" stroke="#7D8C7D" strokeWidth="1" fill="none" />
+                <ellipse cx="50" cy="95" rx="14" ry="6" fill="#C5A059" opacity="0.55" transform="rotate(-30 50 95)" />
+                <ellipse cx="155" cy="80" rx="16" ry="7" fill="#7D8C7D" opacity="0.45" transform="rotate(30 155 80)" />
+                <ellipse cx="65" cy="60" rx="12" ry="5" fill="#7D8C7D" opacity="0.5" transform="rotate(-25 65 60)" />
+                <circle cx="100" cy="30" r="9" fill="#C5A059" opacity="0.7" />
+                <circle cx="100" cy="30" r="4" fill="#4F5D4F" />
+                <path d="M65 210 Q100 200 135 210" stroke="#C5A059" strokeWidth="0.8" fill="none" />
+              </svg>
             </div>
           </div>
         </div>
