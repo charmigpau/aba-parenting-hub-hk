@@ -80,7 +80,7 @@ export function PhilosophySection() {
                   {pillar.zhTitle}
                 </p>
 
-                <p className="mt-4a text-sm leading-[1.7] text-foreground/70">
+                <p className="mt-4 text-sm leading-[1.7] text-foreground/70">
                   {pillar.body}
                 </p>
                 <p className="mt-3 text-xs leading-[1.7] text-foreground/45">
