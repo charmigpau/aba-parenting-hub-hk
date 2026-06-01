@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/site/HeroSection";
 import { TrustBanner } from "@/components/site/TrustBanner";
 import { FamilyEcosystemSection } from "@/components/site/FamilyEcosystemSection";
 import { CredentialsSection } from "@/components/site/CredentialsSection";
+import { AboutClinicianSection } from "@/components/site/AboutClinicianSection";
 import { useLang } from "@/i18n/LanguageProvider";
 
 
