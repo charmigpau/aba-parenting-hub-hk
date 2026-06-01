@@ -438,6 +438,8 @@ const zhHant: Dict = {
     },
   },
   footer: { rights: "版權所有。", followAlong: "追蹤我們", contact: "聯絡" },
+};
+
 export const DICTS: Record<Lang, Dict> = {
   en,
   "zh-HK": zhHant,
