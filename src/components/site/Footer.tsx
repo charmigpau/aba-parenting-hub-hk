@@ -50,6 +50,12 @@ export function Footer() {
           "Relational insights, clinical science made cozy, and local HK support delivered softly to your inbox.",
         emailPlaceholder: "Your email address…",
         joinUs: "Join Us",
+        socialHeading: "Gather with Us",
+        socialLinks: [
+          { href: "https://instagram.com/charmingbcba", icon: "📷", label: "Instagram", handle: "@charmingbcba" },
+          { href: "https://threads.net/@charmingbcba", icon: "🧵", label: "Threads", handle: "@charmingbcba" },
+          { href: "https://facebook.com/charmingbcba", icon: "👥", label: "Facebook", handle: "charmingbcba" },
+        ],
         ecosystemHeading: "Our Shared Ecosystem",
         ecosystemBody: (
           <>
