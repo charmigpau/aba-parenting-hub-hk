@@ -88,7 +88,7 @@ export function OnboardingQuizSection() {
   const prev = () => setStep((s) => Math.max(0, s - 1));
 
   return (
-    <section className="journal-quiz-container">
+    <section className="journal-quiz-container charming-theme">
       <div className="quiz-journal-wrapper">
         <div className="journal-bookmark">
           {isZh ? "CharmingBCBA × SDFK · 旅程起點" : "CharmingBCBA × SDFK · A Reflection Journey"}
