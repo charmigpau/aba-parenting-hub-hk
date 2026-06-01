@@ -73,27 +73,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Charming, BCBA — ABA Therapy & Parent Coaching in Hong Kong" },
-      {
-        name: "description",
-        content:
-          "Trilingual (English, Cantonese, Mandarin) Board Certified Behavior Analyst in Hong Kong. ABA therapy, parent consultation, and evidence-based parenting tips.",
-      },
-      { property: "og:title", content: "Charming, BCBA — ABA Therapy & Parent Coaching in Hong Kong" },
-      {
-        property: "og:description",
-        content:
-          "ABA therapy and parent coaching in English, Cantonese and Mandarin. Book a consultation or read weekly tips.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Charming Pau, BCBA" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Charming, BCBA — ABA Therapy & Parent Coaching in Hong Kong" },
-      { name: "description", content: "As a Third Culture Mom and Board Certified Behavior Analyst (BCBA), I intimately understand the tightrope of parenting—balancing high-stakes local pre" },
-      { property: "og:description", content: "As a Third Culture Mom and Board Certified Behavior Analyst (BCBA), I intimately understand the tightrope of parenting—balancing high-stakes local pre" },
-      { name: "twitter:description", content: "As a Third Culture Mom and Board Certified Behavior Analyst (BCBA), I intimately understand the tightrope of parenting—balancing high-stakes local pre" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/60f7164c-e541-44cf-bcbf-015e2e35c798/id-preview-6a8b0ccb--53690f0f-74d9-40c2-8dad-f191676962be.lovable.app-1780237192162.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/60f7164c-e541-44cf-bcbf-015e2e35c798/id-preview-6a8b0ccb--53690f0f-74d9-40c2-8dad-f191676962be.lovable.app-1780237192162.png" },
+      { property: "og:site_name", content: "CharmingBCBA" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -105,19 +85,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
     ],
     scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          name: "Charming Pau, BCBA",
-          description:
-            "Trilingual Board Certified Behavior Analyst offering ABA therapy and parent consultation in Hong Kong.",
-          areaServed: "Hong Kong",
-          email: "charmingpau@sdfkhk.com",
-          knowsLanguage: ["en", "zh-Hant"],
-        }),
-      },
       { src: "https://www.instagram.com/embed.js", async: true, defer: true },
       { src: "https://www.threads.com/embed.js", async: true, defer: true },
     ],
