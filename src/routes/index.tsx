@@ -3,8 +3,10 @@ import { PageShell } from "@/components/site/PageShell";
 import { HeroCalmHome } from "@/components/site/calm-home/HeroCalmHome";
 import { JournalBridgeSection } from "@/components/site/calm-home/JournalBridgeSection";
 import { CoreProblemSection } from "@/components/site/calm-home/CoreProblemSection";
+import { OnboardingQuizSection } from "@/components/site/calm-home/OnboardingQuizSection";
 import { WorkshopPortalSection } from "@/components/site/calm-home/WorkshopPortalSection";
 import { IndividualCoachingSection } from "@/components/site/calm-home/IndividualCoachingSection";
+
 import { IntakeFormSection } from "@/components/site/calm-home/IntakeFormSection";
 
 export const Route = createFileRoute("/")({
@@ -35,6 +37,8 @@ function Index() {
       <HeroCalmHome />
       <JournalBridgeSection />
       <CoreProblemSection />
+      <OnboardingQuizSection />
+
       <WorkshopPortalSection />
       <IndividualCoachingSection />
       <IntakeFormSection />
