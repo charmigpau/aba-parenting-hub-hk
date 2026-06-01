@@ -133,7 +133,7 @@ export function HeroSection() {
                     </span>
                   </Link>
                   <Link
-                    to="/clinic"
+                    to="/services"
                     className="group inline-flex w-full items-center justify-between gap-3 rounded-full border border-foreground/25 bg-transparent px-6 py-3.5 text-sm font-medium text-foreground transition-all hover:-translate-y-0.5 hover:border-foreground hover:bg-foreground/[0.03]"
                   >
                     <span>{c.secondary}</span>
