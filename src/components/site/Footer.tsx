@@ -20,6 +20,12 @@ export function Footer() {
         postcardDesc: "雙語的關係洞察、化作溫暖的臨床科學、與本地香港支援，輕輕送到你的信箱。",
         emailPlaceholder: "您的電郵地址…",
         joinUs: "加入我們",
+        socialHeading: "在社群相遇",
+        socialLinks: [
+          { href: "https://instagram.com/charmingbcba", icon: "📷", label: "Instagram", handle: "@charmingbcba" },
+          { href: "https://threads.net/@charmingbcba", icon: "🧵", label: "Threads", handle: "@charmingbcba" },
+          { href: "https://facebook.com/charmingbcba", icon: "👥", label: "Facebook", handle: "charmingbcba" },
+        ],
         ecosystemHeading: "我們的共同生態",
         ecosystemBody: (
           <>
