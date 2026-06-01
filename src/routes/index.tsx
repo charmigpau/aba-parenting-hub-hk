@@ -33,6 +33,7 @@ function Index() {
   return (
     <PageShell>
       <HeroCalmHome />
+      <JournalBridgeSection />
       <CoreProblemSection />
       <WorkshopPortalSection />
       <IndividualCoachingSection />
