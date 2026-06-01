@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell, Eyebrow, SectionTitle } from "@/components/site/PageShell";
 import { HeroSection } from "@/components/site/HeroSection";
 import { TrustBanner } from "@/components/site/TrustBanner";
+import { FamilyEcosystemSection } from "@/components/site/FamilyEcosystemSection";
 import { CredentialsSection } from "@/components/site/CredentialsSection";
 import { useLang } from "@/i18n/LanguageProvider";
 
@@ -29,6 +30,7 @@ function Index() {
     <PageShell>
       <HeroSection />
       <TrustBanner />
+      <FamilyEcosystemSection />
       <CredentialsSection />
 
 
