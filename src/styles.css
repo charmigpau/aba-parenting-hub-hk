@@ -148,5 +148,164 @@
       opacity: 1;
       transform: translateY(0);
     }
-  }
+}
+
+/* ================= CharmingBCBA Editorial Boutique System ================= */
+:root {
+  --bg-oatmeal: #FAF8F5;
+  --primary-sage: #7D8C7D;
+  --secondary-forest: #4F5D4F;
+  --accent-gold: #C5A059;
+  --text-slate: #4A4A4A;
+  --text-light: #7E7E7E;
+  --font-serif: 'Cormorant Garamond', 'Source Han Serif TC', 'Source Han Serif SC', serif;
+  --font-ucozy-sans: 'Montserrat', 'Source Han Sans TC', 'Source Han Sans SC', sans-serif;
+}
+
+.urban-cozy-container {
+  background-color: var(--bg-oatmeal);
+  color: var(--text-slate);
+  font-family: var(--font-ucozy-sans);
+  padding: 60px 8%;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.4) 50%, transparent 50%),
+    linear-gradient(90deg, rgba(255,255,255,0.4) 50%, transparent 50%);
+  background-size: 3px 3px;
+  position: relative;
+}
+
+/* Hero */
+.hero-section {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+  padding: 80px 0;
+}
+.editorial-accent-tag {
+  font-family: var(--font-ucozy-sans);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--primary-sage);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 20px;
+}
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  line-height: 1.15;
+  font-weight: 300;
+  color: var(--secondary-forest);
+  margin-bottom: 24px;
+}
+.italic-serif {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-gold);
+}
+.trilingual-group {
+  margin-bottom: 40px;
+  border-left: 1px solid rgba(125, 140, 125, 0.3);
+  padding-left: 20px;
+}
+.lang-zh-hant {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--secondary-forest);
+  margin-bottom: 8px;
+}
+.lang-cantonese {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+.hero-cta-group { display: flex; gap: 16px; flex-wrap: wrap; }
+.cta-primary-btn {
+  background-color: var(--primary-sage);
+  color: #FFFFFF;
+  padding: 14px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: background-color 0.3s;
+  display: inline-block;
+}
+.cta-primary-btn:hover { background-color: var(--secondary-forest); }
+.cta-secondary-btn {
+  border: 1px solid var(--primary-sage);
+  color: var(--primary-sage);
+  padding: 14px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  display: inline-block;
+}
+.cta-secondary-btn:hover { background-color: rgba(125, 140, 125, 0.05); }
+
+.hero-visual-frame { position: relative; width: 100%; aspect-ratio: 1 / 1.1; }
+.botanical-illustration-container {
+  position: absolute; top: 0; left: 0; width: 90%; height: 90%;
+  background: #FFFFFF; border: 1px solid rgba(125, 140, 125, 0.2);
+  z-index: 2; display: flex; align-items: center; justify-content: center; padding: 40px;
+}
+.solid-offset-backdrop {
+  position: absolute; bottom: 0; right: 0; width: 90%; height: 90%;
+  background: var(--bg-oatmeal); border: 1px solid var(--accent-gold); z-index: 1;
+}
+.botanical-svg { width: 80%; height: 80%; }
+
+/* Features */
+.features-section { padding: 100px 0; }
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  color: var(--secondary-forest);
+  margin-bottom: 60px;
+  text-align: center;
+}
+.editorial-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; }
+.card-large { grid-column: span 7; }
+.card-medium { grid-column: span 5; }
+.asymmetric-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(125, 140, 125, 0.15);
+  border-radius: 4px;
+  padding: 48px;
+  position: relative;
+  box-shadow: 6px 6px 0px 0px var(--accent-gold);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.asymmetric-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0px 0px var(--accent-gold);
+}
+.card-icon-wrap { margin-bottom: 24px; }
+.custom-botanical-icon { font-size: 1.8rem; opacity: 0.85; }
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  color: var(--secondary-forest);
+  margin-bottom: 16px;
+}
+.font-serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--text-slate);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.card-desc-zh { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; }
+
+@media (max-width: 968px) {
+  .hero-section { grid-template-columns: 1fr; gap: 40px; padding: 40px 0; }
+  .hero-title { font-size: 2.5rem; }
+  .card-large, .card-medium { grid-column: span 12; }
+  .asymmetric-card { padding: 32px; }
+}
 }
