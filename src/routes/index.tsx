@@ -6,6 +6,8 @@ import { CoreProblemSection } from "@/components/site/calm-home/CoreProblemSecti
 import { OnboardingQuizSection } from "@/components/site/calm-home/OnboardingQuizSection";
 import { WorkshopPortalSection } from "@/components/site/calm-home/WorkshopPortalSection";
 import { IndividualCoachingSection } from "@/components/site/calm-home/IndividualCoachingSection";
+import { AboutClinicianSection } from "@/components/site/AboutClinicianSection";
+import { PhilosophySection } from "@/components/site/PhilosophySection";
 
 import { IntakeFormSection } from "@/components/site/calm-home/IntakeFormSection";
 import { BookingSection } from "@/components/site/calm-home/BookingSection";
@@ -91,6 +93,8 @@ function Index() {
       <WorkshopPortalSection />
       <IndividualCoachingSection />
       <SuccessStoriesSection />
+      <PhilosophySection />
+      <AboutClinicianSection />
       <IntakeFormSection />
       <BookingSection />
     </PageShell>
