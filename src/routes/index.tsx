@@ -9,6 +9,7 @@ import { IndividualCoachingSection } from "@/components/site/calm-home/Individua
 
 import { IntakeFormSection } from "@/components/site/calm-home/IntakeFormSection";
 import { BookingSection } from "@/components/site/calm-home/BookingSection";
+import { SuccessStoriesSection } from "@/components/site/calm-home/SuccessStoriesSection";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -42,6 +43,7 @@ function Index() {
 
       <WorkshopPortalSection />
       <IndividualCoachingSection />
+      <SuccessStoriesSection />
       <IntakeFormSection />
       <BookingSection />
     </PageShell>
