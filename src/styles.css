@@ -905,22 +905,30 @@
   .journal-bookmark { display: none; }
 }
 
-/* ================= BESPOKE BOOKING SECTION ================= */
+/* ================= BESPOKE BOOKING STYLING ================= */
 .booking-section-container {
-  padding: 100px 4%;
-  background-color: #FBF8F2;
-  position: relative;
-  overflow: hidden;
+  padding: 100px 8%;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.01) 1px, transparent 0);
+  background-size: 10px 10px;
 }
+
 .booking-editorial-layout {
-  max-width: 1180px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
+  grid-template-columns: 0.9fr 1.1fr;
   gap: 80px;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.booking-invite-col { position: relative; }
+
+/* Invitation Column */
+.booking-invite-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+}
+
 .editorial-accent-tag {
   display: inline-block;
   font-family: 'Cormorant Garamond', serif;
@@ -928,9 +936,9 @@
   font-size: 0.95rem;
   color: var(--theme-primary, #7d8c7d);
   letter-spacing: 0.04em;
-  margin-bottom: 24px;
   padding-bottom: 4px;
   border-bottom: 1px dashed rgba(125, 140, 125, 0.5);
+  align-self: flex-start;
 }
 .whimsical-title {
   font-family: 'Cormorant Garamond', serif;
@@ -938,7 +946,7 @@
   font-size: clamp(2.2rem, 4.2vw, 3.4rem);
   line-height: 1.15;
   color: var(--text-primary, #2D332D);
-  margin: 0 0 28px;
+  margin: 0;
 }
 .pencil-circle-wrapper {
   position: relative;
@@ -966,13 +974,19 @@
   font-size: 1.05rem;
   color: var(--text-light, #6a6a6a);
 }
+
 .booking-arrow-wrap {
-  margin-top: 40px;
   display: flex;
   align-items: center;
-  color: var(--theme-primary, #7d8c7d);
+  color: var(--theme-accent);
+  margin-top: 20px;
 }
-.hand-arrow.sweep-arrow { width: 120px; height: 60px; }
+
+.booking-arrow-wrap .sweep-arrow {
+  width: 90px;
+  height: 45px;
+  animation: gentle-float-x 3s ease-in-out infinite;
+}
 .scribbled-note {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
@@ -980,65 +994,97 @@
   color: var(--text-light, #6a6a6a);
 }
 
-.booking-widget-col { position: relative; }
-.clipboard-notebook-canvas {
-  position: relative;
-  background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 6px 10px 8px 12px / 10px 6px 12px 8px;
-  box-shadow: 4px 8px 24px rgba(0, 0, 0, 0.06);
-  padding: 56px 24px 28px;
-  min-height: 640px;
-  z-index: 2;
-}
-.clipboard-clip {
-  position: absolute;
-  top: -16px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  z-index: 3;
-}
-.calendar-embed-wrapper {
-  position: relative;
-  width: 100%;
-  height: 580px;
-  overflow: hidden;
-  border-radius: 4px;
-}
-.calendar-embed-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-}
-.paper-margin-line {
-  position: absolute;
-  top: 40px;
-  bottom: 20px;
-  left: 18px;
-  width: 1px;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(196, 90, 80, 0.35) 0,
-    rgba(196, 90, 80, 0.35) 4px,
-    transparent 4px,
-    transparent 8px
-  );
-}
-.clipboard-shadow {
-  position: absolute;
-  inset: 12px -10px -14px 14px;
-  background: rgba(45, 51, 45, 0.06);
-  border-radius: 12px 8px 14px 6px / 8px 14px 6px 12px;
-  z-index: 1;
+@keyframes gentle-float-x {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
 }
 
-@media (max-width: 900px) {
-  .booking-editorial-layout { grid-template-columns: 1fr; gap: 56px; }
-  .booking-arrow-wrap { display: none; }
-  .clipboard-notebook-canvas { min-height: 560px; padding: 48px 18px 24px; }
-  .calendar-embed-wrapper { height: 500px; }
+/* Clipboard Notebook Column */
+.booking-widget-col {
+  position: relative;
+  width: 100%;
+  height: 620px; /* Standard Calendly comfortable viewport height */
+}
+
+/* The physical paper board styling */
+.clipboard-notebook-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  /* Slightly skewed hand-cut sheet border radius */
+  border-radius: 8px 14px 10px 12px / 12px 10px 14px 8px;
+  padding: 40px 24px 24px 44px; /* Left padding handles notebook margins */
+  box-sizing: border-box;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Metal clip overlay */
+.clipboard-clip {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1deg);
+  width: 90px;
+  height: auto;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Left notebook pink margin guideline */
+.paper-margin-line {
+  position: absolute;
+  top: 0;
+  left: 32px;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(230, 181, 167, 0.4); /* Pastel pink margins */
+  border-left: 1px solid rgba(230, 181, 167, 0.1);
+  z-index: 5;
+}
+
+/* Embedded Scheduler Widget Container */
+.calendar-embed-wrapper {
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 4px;
+  z-index: 3;
+  position: relative;
+}
+
+.calendar-embed-wrapper iframe {
+  border: none;
+  background-color: #FFFFFF;
+}
+
+/* Back-shadow paper layer */
+.clipboard-shadow {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(197, 160, 89, 0.15); /* Soft gold shadow border */
+  border-radius: 12px 10px 8px 14px / 10px 14px 12px 8px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Responsive Layout */
+@media (max-width: 968px) {
+  .booking-editorial-layout {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .booking-widget-col {
+    height: 580px;
+  }
 }
 
 
