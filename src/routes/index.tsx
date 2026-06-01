@@ -28,6 +28,7 @@ function Index() {
   return (
     <PageShell>
       <HeroSection />
+      <TrustBanner />
       <CredentialsSection />
 
 
