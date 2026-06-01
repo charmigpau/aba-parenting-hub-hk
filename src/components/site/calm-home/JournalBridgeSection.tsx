@@ -1,4 +1,7 @@
 import { useEffect } from "react";
+import { useLang } from "@/i18n/LanguageProvider";
+
+
 
 export function JournalBridgeSection() {
   useEffect(() => {
