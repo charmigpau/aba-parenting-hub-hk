@@ -1,4 +1,26 @@
+import { useEffect } from "react";
+
 export function JournalBridgeSection() {
+  useEffect(() => {
+    const arrows = document.querySelectorAll<HTMLElement>(".hand-arrow");
+    if (!arrows.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.35 },
+    );
+
+    arrows.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="editorial-canvas charming-theme journal-bridge">
       <div className="journal-entry">

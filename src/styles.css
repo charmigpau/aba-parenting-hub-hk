@@ -528,3 +528,19 @@
   .content-block-b .col-text .en-serif { font-size: 1.5rem; }
   .dashed-guide-wrap { justify-content: center; }
 }
+
+/* ============ Hand-arrow draw-on animation ============ */
+.hand-arrow path {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  transition: stroke-dashoffset 1.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.hand-arrow path:nth-child(2) {
+  transition-delay: 1.2s;
+}
+.hand-arrow.active path {
+  stroke-dashoffset: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hand-arrow path { stroke-dashoffset: 0; transition: none; }
+}
