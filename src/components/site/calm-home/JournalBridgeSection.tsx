@@ -1,6 +1,12 @@
 import { useEffect } from "react";
+import { useLang } from "@/i18n/LanguageProvider";
+
+
 
 export function JournalBridgeSection() {
+  const { lang } = useLang();
+  const isZh = lang === "zh-TW";
+
   useEffect(() => {
     const arrows = document.querySelectorAll<HTMLElement>(".hand-arrow");
     if (!arrows.length) return;
@@ -26,9 +32,15 @@ export function JournalBridgeSection() {
       <div className="journal-entry">
         {/* SECTION A */}
         <div className="content-block-a">
-          <p className="en-serif">We believe clinical science shouldn&apos;t feel clinical.</p>
-          <p className="cantonese-sans">我哋用有溫度嘅育兒方式，默默守護每一個家庭。</p>
+          {isZh ? (
+            <p className="cantonese-sans">
+              我哋相信，臨床科學唔應該感覺冷冰冰；用有溫度嘅育兒方式，默默守護每一個家庭。
+            </p>
+          ) : (
+            <p className="en-serif">We believe clinical science shouldn&apos;t feel clinical.</p>
+          )}
         </div>
+
 
         {/* Loop-de-loop arrow */}
         <div className="arrow-divider-wrap">
@@ -54,13 +66,16 @@ export function JournalBridgeSection() {
               strokeLinejoin="round"
             />
           </svg>
-          <span className="scribbled-note">Keep reading...</span>
+          <span className="scribbled-note">{isZh ? "繼續閱讀…" : "Keep reading..."}</span>
         </div>
 
         {/* SECTION B */}
         <div className="content-block-b journal-flow">
           <div className="col-text">
-            <p className="en-serif">A sanctuary for parental growth.</p>
+            <p className={isZh ? "zh-serif" : "en-serif"}>
+              {isZh ? "一個讓父母安心成長的港灣。" : "A sanctuary for parental growth."}
+            </p>
+
 
             <div className="inline-arrow-wrap">
               <svg
