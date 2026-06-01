@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useLang } from "@/i18n/LanguageProvider";
-import { LANGS, type Lang } from "@/i18n/dictionaries";
 import { useState, useEffect } from "react";
+import { WhimsicalLangToggle } from "./WhimsicalLangToggle";
 
 export function Header() {
   const { lang, setLang, t } = useLang();
