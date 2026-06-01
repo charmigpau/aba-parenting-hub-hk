@@ -1,73 +1,56 @@
 import { useState, type FormEvent } from "react";
 import { useLang } from "@/i18n/LanguageProvider";
+import { Link } from "@tanstack/react-router";
 
 export function Footer() {
-  const { lang, t } = useLang();
+  const { lang } = useLang();
   const isZh = lang === "zh-HK";
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "ok" | "error">("idle");
 
   const copy = isZh
     ? {
-        navHeading: "瀏覽目錄",
+        tagline:
+          "「以溫暖、以實證為本的行為支持，賦能家庭與教育工作者——實用、親切且以人為本。」",
+        navHeading: "快速連結",
         links: [
-          { href: "/about", label: "我們的理念" },
+          { href: "/", label: "首頁" },
           { href: "/services", label: "治療諮詢" },
-          { href: "/services", label: "家長諮詢" },
-          { href: "/resources", label: "社群連繫" },
+          { href: "/contact", label: "聯絡我們" },
+        ],
+        socialHeading: "追蹤我們",
+        socialLinks: [
+          { href: "https://instagram.com/charmingbcba", icon: "📷", label: "Instagram", handle: "@charmingbcba" },
         ],
         postcardTitle: "來自港灣的信",
         postcardDesc: "雙語的關係洞察、化作溫暖的臨床科學、與本地香港支援，輕輕送到你的信箱。",
         emailPlaceholder: "您的電郵地址…",
         joinUs: "加入我們",
-        socialHeading: "在社群相遇",
-        socialLinks: [
-          { href: "https://instagram.com/charmingbcba", icon: "📷", label: "Instagram", handle: "@charmingbcba" },
-          { href: "https://threads.net/@charmingbcba", icon: "🧵", label: "Threads", handle: "@charmingbcba" },
-          { href: "https://facebook.com/charmingbcba", icon: "👥", label: "Facebook", handle: "charmingbcba" },
-        ],
-        ecosystemHeading: "我們的共同生態",
-        ecosystemBody: (
-          <>
-            <strong>CharmingBCBA</strong> 將臨床的安全感，與滋養靈魂的照護連繫起來。姊妹品牌
-            <strong> SDFK</strong>，透過遊戲與探索，陪伴關係之中的成長。
-          </>
-        ),
-        copyright: "© 2026 CharmingBCBA × SDFK。為本地及國際家庭提供關係安全感。",
         thanks: "已收到，謝謝你 ✿",
         invalid: "請輸入有效的電郵地址。",
+        copyright: "© 2026 CharmingBCBA。為本地及國際家庭提供關係安全感。",
       }
     : {
-        navHeading: "Navigate",
+        tagline:
+          "Gentle, evidence-based behavior support that empowers families, domestic helpers, and educators — practical, kind, and human-centered.",
+        navHeading: "Quick Links",
         links: [
-          { href: "/about", label: "Our Philosophy" },
-          { href: "/services", label: "Clinical Care" },
-          { href: "/services", label: "Parent Consultation" },
-          { href: "/resources", label: "Community Hub" },
+          { href: "/", label: "Home" },
+          { href: "/services", label: "Services" },
+          { href: "/contact", label: "Contact" },
+        ],
+        socialHeading: "Follow Us",
+        socialLinks: [
+          { href: "https://instagram.com/charmingbcba", icon: "📷", label: "Instagram", handle: "@charmingbcba" },
         ],
         postcardTitle: "Letters from the Sanctuary",
         postcardDesc:
           "Relational insights, clinical science made cozy, and local HK support delivered softly to your inbox.",
         emailPlaceholder: "Your email address…",
         joinUs: "Join Us",
-        socialHeading: "Gather with Us",
-        socialLinks: [
-          { href: "https://instagram.com/charmingbcba", icon: "📷", label: "Instagram", handle: "@charmingbcba" },
-          { href: "https://threads.net/@charmingbcba", icon: "🧵", label: "Threads", handle: "@charmingbcba" },
-          { href: "https://facebook.com/charmingbcba", icon: "👥", label: "Facebook", handle: "charmingbcba" },
-        ],
-        ecosystemHeading: "Our Shared Ecosystem",
-        ecosystemBody: (
-          <>
-            <strong>CharmingBCBA</strong> bridges clinical security with soul-nourishing care. Its
-            sister brand, <strong>SDFK</strong>, guides relational growth through play and
-            exploration.
-          </>
-        ),
-        copyright:
-          "© 2026 CharmingBCBA × SDFK. Relational Security for local & international families.",
         thanks: "You're on the list ✿",
         invalid: "Please enter a valid email address.",
+        copyright: "© 2026 CharmingBCBA. Relational Security for local & international families.",
       };
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -98,10 +81,16 @@ export function Footer() {
       </div>
 
       <div className="footer-content">
-        <div className="footer-grid">
-          {/* Postcard newsletter */}
-          <div className="footer-col col-postcard">
-            <div className="postcard-container">
+        <div className="footer-grid" style={{ gridTemplateColumns: "1.3fr 1fr", gap: "60px" }}>
+          {/* Left: Logo + tagline + newsletter */}
+          <div className="footer-col col-brand">
+            <div className="footer-brand-header">
+              <h3 className="footer-brand-name">CharmingBCBA</h3>
+              <p className="footer-tagline">{copy.tagline}</p>
+            </div>
+
+            {/* Postcard newsletter */}
+            <div className="postcard-container" style={{ marginTop: "32px" }}>
               <span className="postcard-stamp" aria-hidden="true">
                 📬
               </span>
@@ -150,10 +139,21 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Navigation + Social */}
+          {/* Right: Quick links + social */}
           <div className="footer-col col-links">
-            <h4 className="footer-heading">{copy.socialHeading}</h4>
+            <h4 className="footer-heading">{copy.navHeading}</h4>
             <ul className="footer-link-list" style={{ marginBottom: 28 }}>
+              {copy.links.map((l) => (
+                <li key={l.label}>
+                  <Link to={l.href} className="editorial-link">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <h4 className="footer-heading">{copy.socialHeading}</h4>
+            <ul className="footer-link-list">
               {copy.socialLinks.map((s) => (
                 <li key={s.label}>
                   <a
@@ -170,23 +170,6 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-
-            <h4 className="footer-heading">{copy.navHeading}</h4>
-            <ul className="footer-link-list">
-              {copy.links.map((l) => (
-                <li key={l.label}>
-                  <a href={l.href} className="editorial-link">
-                    {l.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Brand ecosystem */}
-          <div className="footer-col col-brand-connect">
-            <h4 className="footer-heading">{copy.ecosystemHeading}</h4>
-            <p className="brand-desc-footer">{copy.ecosystemBody}</p>
 
             <div className="botanical-cross-sprig" aria-hidden="true">
               <svg viewBox="0 0 100 60" fill="none" className="cross-sprig-svg">
@@ -232,9 +215,6 @@ export function Footer() {
             <span className="dot-mini m-dot-2" />
             <span className="dot-mini m-dot-3" />
           </div>
-          <span className="copyright-text" style={{ opacity: 0.7 }}>
-            {t.brand.tag} · BCBA #1-21-55972
-          </span>
         </div>
       </div>
     </footer>
