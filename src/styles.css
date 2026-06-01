@@ -905,3 +905,140 @@
   .journal-bookmark { display: none; }
 }
 
+/* ================= BESPOKE BOOKING SECTION ================= */
+.booking-section-container {
+  padding: 100px 4%;
+  background-color: #FBF8F2;
+  position: relative;
+  overflow: hidden;
+}
+.booking-editorial-layout {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+}
+.booking-invite-col { position: relative; }
+.editorial-accent-tag {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--theme-primary, #7d8c7d);
+  letter-spacing: 0.04em;
+  margin-bottom: 24px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed rgba(125, 140, 125, 0.5);
+}
+.whimsical-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  line-height: 1.15;
+  color: var(--text-primary, #2D332D);
+  margin: 0 0 28px;
+}
+.pencil-circle-wrapper {
+  position: relative;
+  display: inline-block;
+  font-style: italic;
+  color: var(--theme-dark, #4a5a4a);
+  padding: 0 6px;
+}
+.circle-svg {
+  position: absolute;
+  inset: -8px -10px -10px -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 18px);
+  color: var(--theme-accent, #E3C16F);
+  pointer-events: none;
+}
+.trilingual-passage p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary, #4a4a4a);
+  margin: 0 0 16px;
+}
+.trilingual-passage .zh-serif {
+  font-size: 1.05rem;
+  color: var(--text-light, #6a6a6a);
+}
+.booking-arrow-wrap {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  color: var(--theme-primary, #7d8c7d);
+}
+.hand-arrow.sweep-arrow { width: 120px; height: 60px; }
+.scribbled-note {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--text-light, #6a6a6a);
+}
+
+.booking-widget-col { position: relative; }
+.clipboard-notebook-canvas {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px 10px 8px 12px / 10px 6px 12px 8px;
+  box-shadow: 4px 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 56px 24px 28px;
+  min-height: 640px;
+  z-index: 2;
+}
+.clipboard-clip {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  z-index: 3;
+}
+.calendar-embed-wrapper {
+  position: relative;
+  width: 100%;
+  height: 580px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.calendar-embed-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.paper-margin-line {
+  position: absolute;
+  top: 40px;
+  bottom: 20px;
+  left: 18px;
+  width: 1px;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(196, 90, 80, 0.35) 0,
+    rgba(196, 90, 80, 0.35) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+.clipboard-shadow {
+  position: absolute;
+  inset: 12px -10px -14px 14px;
+  background: rgba(45, 51, 45, 0.06);
+  border-radius: 12px 8px 14px 6px / 8px 14px 6px 12px;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .booking-editorial-layout { grid-template-columns: 1fr; gap: 56px; }
+  .booking-arrow-wrap { display: none; }
+  .clipboard-notebook-canvas { min-height: 560px; padding: 48px 18px 24px; }
+  .calendar-embed-wrapper { height: 500px; }
+}
+
+
