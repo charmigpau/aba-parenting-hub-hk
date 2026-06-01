@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { useLang } from "@/i18n/LanguageProvider";
-import { toast } from "sonner";
+
 
 const COPY = {
   en: {
@@ -47,15 +47,16 @@ export function CtaContactSection() {
   const { lang } = useLang();
   const c = COPY[lang === "en" ? "en" : "zh"];
   const [submitting, setSubmitting] = useState(false);
+  const [sent, setSent] = useState(false);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSubmitting(true);
     setTimeout(() => {
       setSubmitting(false);
+      setSent(true);
       (e.target as HTMLFormElement).reset();
-      toast.success(c.success);
-    }, 600);
+    }, 500);
   }
 
   return (
@@ -152,7 +153,7 @@ export function CtaContactSection() {
             </Field>
           </div>
 
-          <div className="mt-10">
+          <div className="mt-10 flex flex-wrap items-center gap-6">
             <button
               type="submit"
               disabled={submitting}
@@ -168,6 +169,11 @@ export function CtaContactSection() {
                 →
               </span>
             </button>
+            {sent && (
+              <p className="text-sm" style={{ color: "rgba(248,245,240,0.85)" }}>
+                {c.success}
+              </p>
+            )}
           </div>
         </form>
       </div>
