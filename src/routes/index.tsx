@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/site/HeroSection";
 import { TrustBanner } from "@/components/site/TrustBanner";
 import { FamilyEcosystemSection } from "@/components/site/FamilyEcosystemSection";
 import { CredentialsSection } from "@/components/site/CredentialsSection";
+import { AboutClinicianSection } from "@/components/site/AboutClinicianSection";
 import { useLang } from "@/i18n/LanguageProvider";
 
 
@@ -77,7 +78,7 @@ function Index() {
       </section>
 
       {/* Services teaser */}
-      <section>
+      <section className="border-b border-hairline">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 py-20 md:grid-cols-12 md:py-28">
           <div className="md:col-span-5">
             <Eyebrow>{t.home.servicesEyebrow}</Eyebrow>
@@ -99,6 +100,8 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <AboutClinicianSection />
     </PageShell>
   );
 }
