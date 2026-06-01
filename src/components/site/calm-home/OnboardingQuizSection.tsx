@@ -75,7 +75,7 @@ const QUESTIONS: Question[] = [
 
 export function OnboardingQuizSection() {
   const { lang } = useLang();
-  const isZh = lang === "zh-TW";
+  const isZh = lang === "zh-HK";
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
 

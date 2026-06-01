@@ -3,7 +3,7 @@ import { useLang } from "@/i18n/LanguageProvider";
 
 export function Footer() {
   const { lang, t } = useLang();
-  const isZh = lang === "zh-TW";
+  const isZh = lang === "zh-HK";
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "ok" | "error">("idle");
 

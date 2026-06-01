@@ -44,7 +44,7 @@ const ICONS = [GraduationCap, Users, Brain];
 
 export function FamilyEcosystemSection() {
   const { lang } = useLang();
-  const isZh = lang === "zh-TW";
+  const isZh = lang === "zh-HK";
   const c = isZh ? COPY.zh : COPY.en;
 
   return (
