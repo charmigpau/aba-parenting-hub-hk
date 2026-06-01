@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { HeroCalmHome } from "@/components/site/calm-home/HeroCalmHome";
+import { JournalBridgeSection } from "@/components/site/calm-home/JournalBridgeSection";
 import { CoreProblemSection } from "@/components/site/calm-home/CoreProblemSection";
 import { WorkshopPortalSection } from "@/components/site/calm-home/WorkshopPortalSection";
 import { IndividualCoachingSection } from "@/components/site/calm-home/IndividualCoachingSection";
@@ -32,6 +33,7 @@ function Index() {
   return (
     <PageShell>
       <HeroCalmHome />
+      <JournalBridgeSection />
       <CoreProblemSection />
       <WorkshopPortalSection />
       <IndividualCoachingSection />
