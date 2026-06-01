@@ -1,47 +1,55 @@
 const ITEMS = [
   {
+    icon: "❋",
     title: "Overwhelmed by Meltdowns?",
-    body:
-      "You've tried every gentle script and timer. You're not failing — generic parenting advice was never built for a nervous system like your child's. There is a precise framework underneath the chaos.",
+    italic: "Generic parenting advice was never built for your child's nervous system.",
+    zh: "面對情緒爆發感到無助？坊間的教養建議，從來不是為高敏感或神經多元的孩子而設。",
+    span: "card-large",
   },
   {
+    icon: "✦",
     title: "Exhausted by Power Struggles?",
-    body:
-      "Mornings, transitions, screen time — the same battles on loop. Burnout isn't weakness; it's a signal that the system at home needs structure, not more willpower from you.",
+    italic: "Burnout is a signal that the system at home needs structure, not more willpower.",
+    zh: "日復一日的角力令你筋疲力盡？家裡需要的不是更多意志力，而是一套清晰的結構。",
+    span: "card-medium",
   },
   {
+    icon: "❀",
     title: "Navigating a New Diagnosis?",
-    body:
-      "An autism, ADHD, or behavioral diagnosis can feel like a closing door. With the right behavioral roadmap, it becomes the beginning of clarity — for your child and for you.",
+    italic: "With the right behavioral roadmap, diagnosis becomes the beginning of clarity.",
+    zh: "面對新的診斷感到迷惘？以正確的行為框架，診斷將成為清明與信心的起點。",
+    span: "card-medium",
+  },
+  {
+    icon: "✿",
+    title: "Aligning the Whole Ecosystem.",
+    italic: "Parents, co-parents, helpers, and schools — speaking one consistent behavioral language.",
+    zh: "父母、家傭、學校 — 在同一套行為語言下協作，孩子才能真正得到一致的支持。",
+    span: "card-large",
   },
 ];
 
 export function CoreProblemSection() {
   return (
-    <section className="border-y border-hairline bg-background">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <div className="max-w-2xl">
-          <p className="eyebrow">— You are not alone</p>
-          <h2 className="mt-4 font-display text-3xl leading-[1.1] md:text-4xl">
-            The quiet exhaustion most parents never say out loud.
+    <section className="urban-cozy-container">
+      <div className="mx-auto max-w-6xl">
+        <div className="features-section">
+          <h2 className="section-title">
+            The quiet exhaustion <span className="italic-serif">most parents never say out loud.</span>
           </h2>
-        </div>
-        <div className="mt-14 grid grid-cols-1 gap-px bg-hairline md:grid-cols-3">
-          {ITEMS.map((item, i) => (
-            <article
-              key={item.title}
-              className="fade-up bg-background p-8 md:p-10"
-              style={{ animationDelay: `${i * 90}ms` }}
-            >
-              <span
-                aria-hidden
-                className="block h-px w-10"
-                style={{ backgroundColor: "var(--accent)" }}
-              />
-              <h3 className="mt-6 font-display text-2xl leading-snug">{item.title}</h3>
-              <p className="mt-4 text-[0.95rem] leading-relaxed text-ink-muted">{item.body}</p>
-            </article>
-          ))}
+
+          <div className="editorial-grid">
+            {ITEMS.map((it) => (
+              <article key={it.title} className={`asymmetric-card ${it.span}`}>
+                <div className="card-icon-wrap">
+                  <span className="custom-botanical-icon" style={{ color: "var(--accent-gold)" }}>{it.icon}</span>
+                </div>
+                <h3 className="card-title">{it.title}</h3>
+                <p className="font-serif-italic">{it.italic}</p>
+                <p className="card-desc-zh">{it.zh}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
