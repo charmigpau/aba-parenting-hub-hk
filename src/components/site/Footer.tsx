@@ -20,6 +20,12 @@ export function Footer() {
         postcardDesc: "雙語的關係洞察、化作溫暖的臨床科學、與本地香港支援，輕輕送到你的信箱。",
         emailPlaceholder: "您的電郵地址…",
         joinUs: "加入我們",
+        socialHeading: "在社群相遇",
+        socialLinks: [
+          { href: "https://instagram.com/charmingbcba", icon: "📷", label: "Instagram", handle: "@charmingbcba" },
+          { href: "https://threads.net/@charmingbcba", icon: "🧵", label: "Threads", handle: "@charmingbcba" },
+          { href: "https://facebook.com/charmingbcba", icon: "👥", label: "Facebook", handle: "charmingbcba" },
+        ],
         ecosystemHeading: "我們的共同生態",
         ecosystemBody: (
           <>
@@ -44,6 +50,12 @@ export function Footer() {
           "Relational insights, clinical science made cozy, and local HK support delivered softly to your inbox.",
         emailPlaceholder: "Your email address…",
         joinUs: "Join Us",
+        socialHeading: "Gather with Us",
+        socialLinks: [
+          { href: "https://instagram.com/charmingbcba", icon: "📷", label: "Instagram", handle: "@charmingbcba" },
+          { href: "https://threads.net/@charmingbcba", icon: "🧵", label: "Threads", handle: "@charmingbcba" },
+          { href: "https://facebook.com/charmingbcba", icon: "👥", label: "Facebook", handle: "charmingbcba" },
+        ],
         ecosystemHeading: "Our Shared Ecosystem",
         ecosystemBody: (
           <>
@@ -138,8 +150,27 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Navigation */}
+          {/* Navigation + Social */}
           <div className="footer-col col-links">
+            <h4 className="footer-heading">{copy.socialHeading}</h4>
+            <ul className="footer-link-list" style={{ marginBottom: 28 }}>
+              {copy.socialLinks.map((s) => (
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="editorial-link social-editorial-link"
+                  >
+                    <span className="social-icon" aria-hidden="true">{s.icon}</span>{" "}
+                    <span className="social-text">
+                      {s.label} <span className="handle">{s.handle}</span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+
             <h4 className="footer-heading">{copy.navHeading}</h4>
             <ul className="footer-link-list">
               {copy.links.map((l) => (
