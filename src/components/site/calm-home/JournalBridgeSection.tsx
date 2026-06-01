@@ -4,7 +4,9 @@ import { useLang } from "@/i18n/LanguageProvider";
 
 
 export function JournalBridgeSection() {
-  useEffect(() => {
+  const { lang } = useLang();
+  const isZh = lang === "zh-TW";
+
     const arrows = document.querySelectorAll<HTMLElement>(".hand-arrow");
     if (!arrows.length) return;
 
