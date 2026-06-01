@@ -93,6 +93,8 @@ function Index() {
       <WorkshopPortalSection />
       <IndividualCoachingSection />
       <SuccessStoriesSection />
+      <PhilosophySection />
+      <AboutClinicianSection />
       <IntakeFormSection />
       <BookingSection />
     </PageShell>
