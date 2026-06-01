@@ -7,6 +7,7 @@ export function JournalBridgeSection() {
   const { lang } = useLang();
   const isZh = lang === "zh-TW";
 
+  useEffect(() => {
     const arrows = document.querySelectorAll<HTMLElement>(".hand-arrow");
     if (!arrows.length) return;
 
@@ -31,9 +32,15 @@ export function JournalBridgeSection() {
       <div className="journal-entry">
         {/* SECTION A */}
         <div className="content-block-a">
-          <p className="en-serif">We believe clinical science shouldn&apos;t feel clinical.</p>
-          <p className="cantonese-sans">我哋用有溫度嘅育兒方式，默默守護每一個家庭。</p>
+          {isZh ? (
+            <p className="cantonese-sans">
+              我哋相信，臨床科學唔應該感覺冷冰冰；用有溫度嘅育兒方式，默默守護每一個家庭。
+            </p>
+          ) : (
+            <p className="en-serif">We believe clinical science shouldn&apos;t feel clinical.</p>
+          )}
         </div>
+
 
         {/* Loop-de-loop arrow */}
         <div className="arrow-divider-wrap">
