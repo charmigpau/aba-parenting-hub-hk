@@ -41,9 +41,9 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: "https://charmingbcba.com/" },
-      { rel: "alternate", hreflang: "en", href: "https://charmingbcba.com/" },
-      { rel: "alternate", hreflang: "zh-HK", href: "https://charmingbcba.com/?lang=zh" },
-      { rel: "alternate", hreflang: "x-default", href: "https://charmingbcba.com/" },
+      { rel: "alternate", hrefLang: "en", href: "https://charmingbcba.com/" },
+      { rel: "alternate", hrefLang: "zh-HK", href: "https://charmingbcba.com/?lang=zh" },
+      { rel: "alternate", hrefLang: "x-default", href: "https://charmingbcba.com/" },
     ],
     scripts: [
       {
