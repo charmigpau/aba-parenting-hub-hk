@@ -1088,3 +1088,156 @@
 }
 
 
+
+/* ================= BILINGUAL FRAMEWORK ================= */
+
+/* Language-specific typography — switches on the <html lang> attribute set
+   by LanguageProvider. English keeps the editorial Cormorant + Montserrat
+   pairing; Hong Kong Traditional Chinese swaps in Noto Serif TC / Noto Sans
+   TC (the open-source equivalents of Source Han Serif/Sans) to preserve a
+   premium academic stroke weight while keeping clinical terminology crisp. */
+
+html[lang^="en"] {
+  --font-display: 'Cormorant Garamond', ui-serif, Georgia, serif;
+  --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+}
+
+html[lang^="zh"] {
+  --font-display: 'Noto Serif TC', 'Source Han Serif TC', 'Source Han Serif', ui-serif, Georgia, serif;
+  --font-sans: 'Noto Sans TC', 'Source Han Sans TC', 'Source Han Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+html[lang^="zh"] body,
+html[lang^="zh"] .font-serif-italic,
+html[lang^="zh"] .quiz-option-card,
+html[lang^="zh"] button,
+html[lang^="zh"] input,
+html[lang^="zh"] textarea {
+  font-family: var(--font-sans);
+}
+
+html[lang^="zh"] h1,
+html[lang^="zh"] h2,
+html[lang^="zh"] h3,
+html[lang^="zh"] .font-display,
+html[lang^="zh"] .quiz-main-title,
+html[lang^="zh"] .whimsical-title,
+html[lang^="zh"] blockquote {
+  font-family: var(--font-display);
+  font-style: normal; /* italic CJK reads poorly — disable serif italics */
+  letter-spacing: 0.01em;
+}
+
+/* Colloquial Cantonese overlay — a soft secondary line under formal
+   繁體中文 copy, used to bridge clinical terminology with warm local voice. */
+.colloquial-overlay {
+  margin-top: 10px;
+  font-family: 'Noto Sans TC', 'Source Han Sans TC', ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(82, 82, 91, 0.62); /* light-gray, ~ink-muted */
+  font-style: normal;
+  letter-spacing: 0.015em;
+}
+.colloquial-overlay::before {
+  content: "「";
+  opacity: 0.55;
+  margin-right: 1px;
+}
+.colloquial-overlay::after {
+  content: "」";
+  opacity: 0.55;
+  margin-left: 1px;
+}
+
+/* ================= WHIMSICAL LANGUAGE TOGGLE ================= */
+
+.whimsical-lang-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  background: #FFFDF8;
+  border: 1.5px solid rgba(44, 44, 44, 0.45);
+  /* Organic hand-drawn paper tab — asymmetric corners */
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow:
+    1px 2px 0 rgba(44, 44, 44, 0.08),
+    inset 0 0 0 1px rgba(255, 253, 248, 0.6);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  isolation: isolate;
+}
+
+.whimsical-lang-toggle:hover {
+  transform: rotate(-1.5deg) translateY(-1px);
+  background: #FBF6EC;
+  box-shadow:
+    2px 3px 0 rgba(44, 44, 44, 0.12),
+    inset 0 0 0 1px rgba(255, 253, 248, 0.6);
+}
+
+.whimsical-lang-toggle:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--accent),
+    2px 3px 0 rgba(44, 44, 44, 0.12);
+}
+
+/* Pencil-scribble overlay revealed on hover */
+.lang-tab-scribble {
+  position: absolute;
+  inset: 2px;
+  pointer-events: none;
+  opacity: 0;
+  border-radius: inherit;
+  background-image:
+    repeating-linear-gradient(
+      118deg,
+      transparent 0 5px,
+      rgba(182, 145, 70, 0.22) 5px 6px
+    ),
+    repeating-linear-gradient(
+      62deg,
+      transparent 0 7px,
+      rgba(141, 163, 144, 0.18) 7px 8px
+    );
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+.whimsical-lang-toggle:hover .lang-tab-scribble {
+  opacity: 1;
+}
+
+.lang-tab-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--foreground);
+  line-height: 1;
+}
+
+.lang-tab-active {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--foreground);
+}
+
+.lang-tab-sep {
+  color: rgba(44, 44, 44, 0.35);
+  font-weight: 300;
+}
+
+.lang-tab-other {
+  color: rgba(82, 82, 91, 0.7);
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
+.whimsical-lang-toggle:hover .lang-tab-other {
+  color: var(--accent);
+}
