@@ -3,43 +3,30 @@ export function HeroCalmHome() {
     <section className="urban-cozy-container">
       <div className="mx-auto max-w-6xl">
         <div className="hero-section">
-          <div>
-            <span className="editorial-accent-tag">The Calm Home Project · Charming Pau, BCBA</span>
+          <div className="hero-content">
+            <span className="editorial-accent-tag">The HK Third Way • 關係與科學</span>
+
             <h1 className="hero-title">
-              Transform power struggles into <span className="italic-serif">connected parenting.</span>
+              Bridging the gap between <span className="italic-serif">clinical science</span> and relational security.
             </h1>
 
             <div className="trilingual-group">
-              <p className="lang-zh-hant">將親子角力，化為深度連結的教養。</p>
-              <p className="lang-cantonese">由香港首屈一指的行為分析師，為高需求家庭打造的尊尚教養旅程。</p>
+              <p className="lang-zh-hant">為香港家庭連結臨床行為科學與溫暖的安全感。</p>
+              <p className="lang-cantonese">等我哋一齊喺高壓嘅環境下，同仔女建立最真摯、最安穩嘅連繫。</p>
             </div>
 
-            <p className="mb-10 max-w-xl text-[1rem] leading-[1.75]" style={{ color: "var(--text-slate)" }}>
-              A premium, evidence-based workshop series and 1:1 coaching practice for proactive
-              parents navigating complex behaviors, ADHD, or autism diagnoses — built to restore
-              calm, clarity, and connection at home.
-            </p>
-
             <div className="hero-cta-group">
-              <a href="#workshops" className="cta-primary-btn">Secure Your Workshop Seat →</a>
-              <a href="#coaching" className="cta-secondary-btn">Explore 1:1 Coaching →</a>
+              <a href="#intake" className="cta-primary-btn">Begin Your Journey</a>
+              <a href="#coaching" className="cta-secondary-btn">Explore Our Philosophy</a>
             </div>
           </div>
 
           <div className="hero-visual-frame">
             <div className="solid-offset-backdrop" />
             <div className="botanical-illustration-container">
-              <svg className="botanical-svg" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M100 210 C100 140 100 90 100 30" stroke="#7D8C7D" strokeWidth="1.2" />
-                <path d="M100 150 C70 140 55 120 50 95" stroke="#7D8C7D" strokeWidth="1" fill="none" />
-                <path d="M100 130 C130 122 148 105 155 80" stroke="#7D8C7D" strokeWidth="1" fill="none" />
-                <path d="M100 110 C80 100 68 82 65 60" stroke="#7D8C7D" strokeWidth="1" fill="none" />
-                <ellipse cx="50" cy="95" rx="14" ry="6" fill="#C5A059" opacity="0.55" transform="rotate(-30 50 95)" />
-                <ellipse cx="155" cy="80" rx="16" ry="7" fill="#7D8C7D" opacity="0.45" transform="rotate(30 155 80)" />
-                <ellipse cx="65" cy="60" rx="12" ry="5" fill="#7D8C7D" opacity="0.5" transform="rotate(-25 65 60)" />
-                <circle cx="100" cy="30" r="9" fill="#C5A059" opacity="0.7" />
-                <circle cx="100" cy="30" r="4" fill="#4F5D4F" />
-                <path d="M65 210 Q100 200 135 210" stroke="#C5A059" strokeWidth="0.8" fill="none" />
+              <svg className="botanical-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M50 90C50 90 48 50 60 30M60 30C65 20 55 10 50 15C45 10 35 20 40 30M40 30C52 50 50 90 50 90" stroke="#7D8C7D" strokeWidth="1.5" strokeLinecap="round" />
+                <path d="M47 55C42 53 40 48 45 46C50 44 52 50 47 55Z" fill="#C5A059" opacity="0.8" />
               </svg>
             </div>
           </div>
