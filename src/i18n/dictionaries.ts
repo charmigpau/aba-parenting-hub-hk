@@ -2,8 +2,59 @@ export type Lang = "en" | "zh-HK";
 
 export const LANGS: { code: Lang; label: string; htmlLang: string }[] = [
   { code: "en", label: "EN", htmlLang: "en" },
-  { code: "zh-HK", label: "繁", htmlLang: "zh-Hant" },
+  { code: "zh-HK", label: "繁", htmlLang: "zh-Hant-HK" },
 ];
+
+/**
+ * Strict, clinically-vetted glossary shared across the site.
+ * Hong Kong Traditional Chinese (繁體中文) — never Simplified.
+ */
+export const GLOSSARY = {
+  en: {
+    aba: "Applied Behavior Analysis (ABA)",
+    bst: "Behavioral Skills Training (BST)",
+    bcba: "Board Certified Behavior Analyst (BCBA)",
+    sen: "Special Educational Needs (SEN)",
+    relational_security: "Relational Security",
+    parent_consult: "Parent Consultation",
+    neuroscience: "Neuroscience",
+    positive_reinforcement: "Positive Reinforcement",
+    natural_teaching: "Natural Environment Training (NET)",
+    discovery_call: "15-Minute Free Discovery Call",
+    home_vibe_q: "Which landscape captures your current home vibe?",
+    hk_third_way: "The HK Third Way",
+  },
+  "zh-HK": {
+    aba: "應用行為分析 (ABA)",
+    bst: "行為技能培訓 (BST)",
+    bcba: "國際認證行為分析師 (BCBA)",
+    sen: "特殊教育需要 (SEN)",
+    relational_security: "關係安全感",
+    parent_consult: "家長諮詢與指導",
+    neuroscience: "腦神經科學",
+    positive_reinforcement: "正向增強",
+    natural_teaching: "自然環境教學 (NET)",
+    discovery_call: "15分鐘免費探索諮詢",
+    home_vibe_q: "哪一個情境最貼近您現時的家庭氣氛？",
+    hk_third_way: "香港育兒第三條路",
+  },
+} as const;
+
+export type GlossaryKey = keyof typeof GLOSSARY.en;
+
+/**
+ * Colloquial Cantonese (廣東話) overlays — shown as a soft secondary
+ * line under formal 繁體中文 copy on parent-facing prompts. Keys are
+ * referenced by components that want a warm, local fallback voice.
+ */
+export const COLLOQUIAL: Record<string, string> = {
+  home_vibe_q: "你而家屋企嘅氣氛，最似邊一幅畫？",
+  discovery_call: "傾15分鐘，傾下你屋企嘅情況，免費。",
+  relational_security:
+    "等我哋一齊喺高壓嘅環境下，同仔女建立最真摯、最安穩嘅連繫。",
+  parent_consult: "搵個專業人士，傾下你而家頭痛緊嘅育兒難題。",
+  hk_third_way: "唔使硬谷，又唔使放軟手腳 — 香港家長嘅第三條路。",
+};
 
 export type Dict = {
   brand: { name: string; tag: string };
