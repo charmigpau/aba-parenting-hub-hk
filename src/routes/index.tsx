@@ -30,6 +30,7 @@ function Index() {
     <PageShell>
       <HeroSection />
       <TrustBanner />
+      <FamilyEcosystemSection />
       <CredentialsSection />
 
 
