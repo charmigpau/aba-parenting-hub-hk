@@ -70,7 +70,7 @@
   --ring: oklch(0.69 0.10 80);
 
   --font-display: "Lora", "Cormorant Garamond", "Source Han Serif TC", "Source Han Serif SC", "Noto Serif TC", "Noto Serif SC", ui-serif, Georgia, serif;
-  --font-sans: "Montserrat", "Source Han Sans TC", "Source Han Sans SC", "Noto Sans TC", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", "Source Han Sans TC", "Source Han Sans SC", "Noto Sans TC", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -114,6 +114,17 @@
     background: var(--accent);
     color: var(--accent-foreground);
   }
+
+  /* Warm serif headings for gentle, editorial brand voice */
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.012em;
+    color: var(--foreground);
+  }
+  h1 { line-height: 1.12; }
+  h2 { line-height: 1.18; }
+  h3 { line-height: 1.25; font-weight: 500; }
 }
 
 @layer utilities {
